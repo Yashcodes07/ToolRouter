@@ -3,3 +3,7 @@ __pycache__/
 .env
 data/raw.jsonl
 sandbox/
+data/raw*.jsonl
+data/test_new.jsonl
+data/clean.json
+data/hf/
