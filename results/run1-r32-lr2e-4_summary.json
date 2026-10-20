@@ -1,0 +1,16 @@
+{
+ "test_seen": {
+  "json_valid": 99.6,
+  "tool_correct": 95.8,
+  "schema_valid": 95.8,
+  "args_exact": 68.2,
+  "n": 283
+ },
+ "test_unseen": {
+  "json_valid": 100.0,
+  "tool_correct": 98.7,
+  "schema_valid": 98.3,
+  "args_exact": 68.0,
+  "n": 300
+ }
+}
