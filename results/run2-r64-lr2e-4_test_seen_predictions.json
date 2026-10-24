@@ -1,0 +1,5214 @@
+[
+ {
+  "query": "Search for the keyword \"projct\" (typo for project) in my task titles, possibly in src/project/overview.md.",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"projct\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"projct\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "projct"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please confirm that the mountain climb training task 1001 is done.",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 1001}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 1001}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 1001
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show me the contents of the output directory for the simulations",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"output\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"output\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "output"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I finished cooking dinner and cleaned up afterward; please mark this task as done.",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 11}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 13}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 13
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Add an entity titled \"Sapiens: A Brief History of Humankind\" of type \"Non-Fiction\" with details on the author, year, and its main thesis.",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"Non-Fiction\", \"name\": \"Sapiens: A Brief History of Humankind\", \"observations\": [\"Author: Yuval Noah Harari\", \"Published: 2011\", \"Thesis: Homo sapiens' impact on the planet.\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"Non-Fiction\", \"name\": \"Sapiens: A Brief History of Humankind\", \"observations\": [\"Author: Yuval Noah Harari\", \"Published: 2015\", \"Thesis: Explores the evolution of human societies and ideas.\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "Non-Fiction",
+      "name": "Sapiens: A Brief History of Humankind",
+      "observations": [
+       "Author: Yuval Noah Harari",
+       "Published: 2015",
+       "Thesis: Explores the evolution of human societies and ideas."
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Can you load the nodes for the cities New York and Seoul to compare time zones?",
+  "tool": "open_nodes",
+  "gold_args": "{\"names\": [\"New York\", \"Seoul\"]}",
+  "output": "<tool_call>\n{\"name\": \"open_nodes\", \"arguments\": {\"names\": [\"New York\", \"Seoul\"]}}\n</tool_call>",
+  "pred": {
+   "name": "open_nodes",
+   "arguments": {
+    "names": [
+     "New York",
+     "Seoul"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Add \"Pilates Session\" task due 2026-10-25",
+  "tool": "add_task",
+  "gold_args": "{\"due\": \"2026-10-25\", \"title\": \"Pilates Session\"}",
+  "output": "<tool_call>\n{\"name\": \"add_task\", \"arguments\": {\"due\": \"2026-10-25\", \"title\": \"Pilates Session\"}}\n</tool_call>",
+  "pred": {
+   "name": "add_task",
+   "arguments": {
+    "due": "2026-10-25",
+    "title": "Pilates Session"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please update the SQL connection string in db/config.sql, replacing the host placeholder.",
+  "tool": "edit_file",
+  "gold_args": "{\"dryRun\": true, \"edits\": [{\"newText\": \"host=db.production.example.com\", \"oldText\": \"host=PLACEHOLDER_HOST\"}], \"path\": \"db/config.sql\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"edits\": [{\"newText\": \"host=localhost\", \"oldText\": \"host=placeholder\"}], \"path\": \"db/config.sql\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "edits": [
+     {
+      "newText": "host=localhost",
+      "oldText": "host=placeholder"
+     }
+    ],
+    "path": "db/config.sql"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "I finished cleaning the kitchen and need to mark the task as done.",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 7}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 13}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 13
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "I cleaned the living room floor today; please mark that task as finished.",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 9}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 13}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 13
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "I want a full tree of my tax documents, but leave out any PDFs named secret_*.pdf. Path: taxes/2022",
+  "tool": "directory_tree",
+  "gold_args": "{\"excludePatterns\": [\"secret_*.pdf\"], \"path\": \"taxes/2022\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"excludePatterns\": [\"secret_*.pdf\"], \"path\": \"taxes/2022\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "excludePatterns": [
+     "secret_*.pdf"
+    ],
+    "path": "taxes/2022"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show me the whole directory tree for the monthly budget reports, i want to see all the files inside 2024/financials/monthly_reports",
+  "tool": "directory_tree",
+  "gold_args": "{\"path\": \"2024/financials/monthly_reports\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"path\": \"2024/financials/monthly_reports\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "path": "2024/financials/monthly_reports"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I have finished the laundry, could you mark task 9 as done?",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 9}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 9}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 9
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I finished cleaning the kitchen, can you set task 7 to done?",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 7}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 7}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 7
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Can you show me the permissions and last modified time for the cardio routine file located at routines/cardio/routine.md?",
+  "tool": "get_file_info",
+  "gold_args": "{\"path\": \"routines/cardio/routine.md\"}",
+  "output": "<tool_call>\n{\"name\": \"get_file_info\", \"arguments\": {\"path\": \"routines/cardio/routine.md\"}}\n</tool_call>",
+  "pred": {
+   "name": "get_file_info",
+   "arguments": {
+    "path": "routines/cardio/routine.md"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please retrieve the size, creation and modification timestamps, and permissions for the file named 'project_plan_v2.docx'.",
+  "tool": "get_file_info",
+  "gold_args": "{\"path\": \"projects/marketing/project_plan_v2.docx\"}",
+  "output": "<tool_call>\n{\"name\": \"get_file_info\", \"arguments\": {\"path\": \"project_plan_v2.docx\"}}\n</tool_call>",
+  "pred": {
+   "name": "get_file_info",
+   "arguments": {
+    "path": "project_plan_v2.docx"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Kindly create a file called scripts/visualize_results.R that contains an R script for plotting the experiment results with ggplot2.",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"library(ggplot2)\\n\\ndata <- read.csv('results/experiment.csv')\\n\\np <- ggplot(data, aes(x=epoch, y=accuracy, color=method)) +\\n  geom_line(size=1.2) +\\n  labs(title='Model Accuracy Over Epochs', x='Epoch', y='Accuracy') +\\n  theme_minimal()\\n\\nggsave('figures/accuracy_plot.png', plot=p, width=8, height=5, dpi=300)\\n\", \"path\": \"scripts/visualize_results.R\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"library(ggplot2)\\n\\ndata <- read.csv('results.csv')\\n\\np <- ggplot(data, aes(x=iteration, y=value)) + geom_line()\\nggsave('results.png', p)\\n\", \"path\": \"scripts/visualize_results.R\"}}\n</tool_call>",
+  "pred": {
+   "name": "write_file",
+   "arguments": {
+    "content": "library(ggplot2)\n\ndata <- read.csv('results.csv')\n\np <- ggplot(data, aes(x=iteration, y=value)) + geom_line()\nggsave('results.png', p)\n",
+    "path": "scripts/visualize_results.R"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Find any tasks with the word \"summary\" in the title regarding the economics exam.",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"summary\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"summary\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "summary"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Display the directory tree of event-planning/finance",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"event-planning/finance\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"path\": \"event-planning/finance\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "path": "event-planning/finance"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "Kindly provide the full file statistics for the JSON file with my reading notes, stored at notes/reading_notes.json.",
+  "tool": "get_file_info",
+  "gold_args": "{\"path\": \"notes/reading_notes.json\"}",
+  "output": "<tool_call>\n{\"name\": \"get_file_info\", \"arguments\": {\"path\": \"notes/reading_notes.json\"}}\n</tool_call>",
+  "pred": {
+   "name": "get_file_info",
+   "arguments": {
+    "path": "notes/reading_notes.json"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Save a markdown file with a table of my credit card balances and interest rates. Name it credit/cards_overview.md.",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"# Credit Card Overview\\n\\n| Card | Balance | APR |\\n|------|---------|-----|\\n| Chase Sapphire | $2,300 | 19.99% |\\n| Citi Double Cash | $1,150 | 15.24% |\\n| Discover it | $800 | 17.99% |\\n\", \"path\": \"credit/cards_overview.md\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"# Credit Card Balances\\n\\n| Card | Balance | Interest Rate |\\n|------|---------|--------------|\\n| Amex | $500    | 15%          |\\n| Visa  | $300    | 12%          |\\n| MasterCard | $200 | 14%          |\\n\", \"path\": \"credit/cards_overview.md\"}}\n</tool_call>",
+  "pred": {
+   "name": "write_file",
+   "arguments": {
+    "content": "# Credit Card Balances\n\n| Card | Balance | Interest Rate |\n|------|---------|--------------|\n| Amex | $500    | 15%          |\n| Visa  | $300    | 12%          |\n| MasterCard | $200 | 14%          |\n",
+    "path": "credit/cards_overview.md"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Show tasks whose title includes \"economics\" from my reading list.",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"economics\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"economics\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "economics"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Preview the upcoming edit to my modern classics. In books/modern_classics.txt replace \"Catch-22\" with \"Catch-22 by Joseph Heller\"",
+  "tool": "edit_file",
+  "gold_args": "{\"dryRun\": true, \"edits\": [{\"newText\": \"Catch-22 by Joseph Heller\", \"oldText\": \"Catch-22\"}], \"path\": \"books/modern_classics.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"dryRun\": true, \"edits\": [{\"newText\": \"Catch-22 by Joseph Heller\", \"oldText\": \"Catch-22\"}], \"path\": \"books/modern_classics.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "dryRun": true,
+    "edits": [
+     {
+      "newText": "Catch-22 by Joseph Heller",
+      "oldText": "Catch-22"
+     }
+    ],
+    "path": "books/modern_classics.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I need to establish that the Scheduler component orchestrates tasks for the WorkerPool, and that the WorkerPool processes jobs from the JobQueue located at jobs/queue.json. Also, state that the JobQueue is monitored by the MonitoringService.",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"Scheduler\", \"relationType\": \"orchestrates\", \"to\": \"WorkerPool\"}, {\"from\": \"WorkerPool\", \"relationType\": \"processesFrom\", \"to\": \"jobs/queue.json\"}, {\"from\": \"jobs/queue.json\", \"relationType\": \"monitoredBy\", \"to\": \"MonitoringService\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"Scheduler\", \"relationType\": \"orchestrates\", \"to\": \"WorkerPool\"}, {\"from\": \"WorkerPool\", \"relationType\": \"processes\", \"to\": \"jobs/queue.json\"}, {\"from\": \"MonitoringService\", \"relationType\": \"monitors\", \"to\": \"jobs/queue.json\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "Scheduler",
+      "relationType": "orchestrates",
+      "to": "WorkerPool"
+     },
+     {
+      "from": "WorkerPool",
+      "relationType": "processes",
+      "to": "jobs/queue.json"
+     },
+     {
+      "from": "MonitoringService",
+      "relationType": "monitors",
+      "to": "jobs/queue.json"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Connect the thesis \"Efficient Algorithms\" with the advisor \"Dr. Nguyen\" showing mentorship.",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"Efficient Algorithms\", \"relationType\": \"advisedBy\", \"to\": \"Dr. Nguyen\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"Efficient Algorithms\", \"relationType\": \"mentorship\", \"to\": \"Dr. Nguyen\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "Efficient Algorithms",
+      "relationType": "mentorship",
+      "to": "Dr. Nguyen"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Look up any tasks related to restocking pantry items",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"restocking\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"restock pantry\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "restock pantry"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Provide the done tasks with medium priority for the product launch after\u2011party logistics.",
+  "tool": "list_tasks",
+  "gold_args": "{\"priority\": \"medium\", \"status\": \"done\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"priority\": \"medium\", \"status\": \"done\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "priority": "medium",
+    "status": "done"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Add a task 'Finish literature review essay' due 2026-10-30.",
+  "tool": "add_task",
+  "gold_args": "{\"due\": \"2026-10-30\", \"title\": \"Finish literature review essay\"}",
+  "output": "<tool_call>\n{\"name\": \"add_task\", \"arguments\": {\"due\": \"2026-10-30\", \"title\": \"Finish literature review essay\"}}\n</tool_call>",
+  "pred": {
+   "name": "add_task",
+   "arguments": {
+    "due": "2026-10-30",
+    "title": "Finish literature review essay"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Print the recursive structure of the crossfit event recordings",
+  "tool": "directory_tree",
+  "gold_args": "{\"excludePatterns\": [\"*.tmp\", \"backup*\"], \"path\": \"media/crossfit/recordings\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"path\": \"crossfit/event_recordings\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "path": "crossfit/event_recordings"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Display the full directory tree for the marathon training schedule",
+  "tool": "directory_tree",
+  "gold_args": "{\"excludePatterns\": [\"*old*\"], \"path\": \"training/marathon\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"path\": \"marathon/schedule\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "path": "marathon/schedule"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "The quiz preparation task is finished, please complete it",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 21}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 3}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 3
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Could you set up a task for me? 'Morning yoga session' due 2026-11-01 and I want it as a low priority task.",
+  "tool": "add_task",
+  "gold_args": "{\"due\": \"2026-11-01\", \"priority\": \"low\", \"title\": \"Morning yoga session\"}",
+  "output": "<tool_call>\n{\"name\": \"add_task\", \"arguments\": {\"due\": \"2026-11-01\", \"priority\": \"low\", \"title\": \"Morning yoga session\"}}\n</tool_call>",
+  "pred": {
+   "name": "add_task",
+   "arguments": {
+    "due": "2026-11-01",
+    "priority": "low",
+    "title": "Morning yoga session"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Mark the statistics homework as done, I'm finished",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 9}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 13}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 13
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Done with arranging the car rental for the road trip across the US, close the task now.",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 103}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 13}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 13
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Display the entire catering menu from resources/catering_menu.md",
+  "tool": "read_text_file",
+  "gold_args": "{\"path\": \"resources/catering_menu.md\"}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"path\": \"resources/catering_menu.md\"}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "path": "resources/catering_menu.md"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show me all grocery related tasks that mention 'eggs'",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"eggs\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"eggs\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "eggs"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Schedule a task 'Call Mom to check in' due 2026-10-20 and set it to low priority so I remember to call her soon.",
+  "tool": "add_task",
+  "gold_args": "{\"due\": \"2026-10-20\", \"priority\": \"low\", \"title\": \"Call Mom to check in\"}",
+  "output": "<tool_call>\n{\"name\": \"add_task\", \"arguments\": {\"due\": \"2026-10-20\", \"priority\": \"low\", \"title\": \"Call Mom to check in\"}}\n</tool_call>",
+  "pred": {
+   "name": "add_task",
+   "arguments": {
+    "due": "2026-10-20",
+    "priority": "low",
+    "title": "Call Mom to check in"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Add a relation indicating that the Finance office is managed by the CFO.",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"Finance office\", \"relationType\": \"managed by\", \"to\": \"CFO\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"Finance office\", \"relationType\": \"managedBy\", \"to\": \"CFO\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "Finance office",
+      "relationType": "managedBy",
+      "to": "CFO"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "I want a new folder for my Berlin vacation schedule",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"travel/berlin/schedule\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"travel/berlin/vacation_schedule\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "travel/berlin/vacation_schedule"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Add task 'Summarize findings of systematic review on algorithmic bias' with default priority and no due date.",
+  "tool": "add_task",
+  "gold_args": "{\"title\": \"Summarize findings of systematic review on algorithmic bias\"}",
+  "output": "<tool_call>\n{\"name\": \"add_task\", \"arguments\": {\"due\": null, \"priority\": \"medium\", \"title\": \"Summarize findings of systematic review on algorithmic bias\"}}\n</tool_call>",
+  "pred": {
+   "name": "add_task",
+   "arguments": {
+    "due": null,
+    "priority": "medium",
+    "title": "Summarize findings of systematic review on algorithmic bias"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Show tasks that include the term \"running\" in their title.",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"running\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"running\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "running"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Modify the header in slides/presentation.md from \"# Research Overview\" to \"# Updated Research Overview\".",
+  "tool": "edit_file",
+  "gold_args": "{\"dryRun\": false, \"edits\": [{\"newText\": \"# Updated Research Overview\", \"oldText\": \"# Research Overview\"}], \"path\": \"slides/presentation.md\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"edits\": [{\"newText\": \"# Updated Research Overview\", \"oldText\": \"# Research Overview\"}], \"path\": \"slides/presentation.md\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "edits": [
+     {
+      "newText": "# Updated Research Overview",
+      "oldText": "# Research Overview"
+     }
+    ],
+    "path": "slides/presentation.md"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "list all high priority tasks",
+  "tool": "list_tasks",
+  "gold_args": "{\"priority\": \"high\", \"status\": \"all\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"priority\": \"high\", \"status\": \"all\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "priority": "high",
+    "status": "all"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please read the following: notes/todo.txt, notes/ideas.md, and notes/project_plan.docx",
+  "tool": "read_multiple_files",
+  "gold_args": "{\"paths\": [\"notes/todo.txt\", \"notes/ideas.md\", \"notes/project_plan.docx\"]}",
+  "output": "<tool_call>\n{\"name\": \"read_multiple_files\", \"arguments\": {\"paths\": [\"notes/todo.txt\", \"notes/ideas.md\", \"notes/project_plan.docx\"]}}\n</tool_call>",
+  "pred": {
+   "name": "read_multiple_files",
+   "arguments": {
+    "paths": [
+     "notes/todo.txt",
+     "notes/ideas.md",
+     "notes/project_plan.docx"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Can you mark task 1001 as done?",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 1001}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 1001}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 1001
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I want a task titled 'Compile packing list for Greece' with medium priority.",
+  "tool": "add_task",
+  "gold_args": "{\"priority\": \"medium\", \"title\": \"Compile packing list for Greece\"}",
+  "output": "<tool_call>\n{\"name\": \"add_task\", \"arguments\": {\"priority\": \"medium\", \"title\": \"Compile packing list for Greece\"}}\n</tool_call>",
+  "pred": {
+   "name": "add_task",
+   "arguments": {
+    "priority": "medium",
+    "title": "Compile packing list for Greece"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Delete the cities Dublin, Edinburgh, and Glasgow from the graph",
+  "tool": "delete_entities",
+  "gold_args": "{\"entityNames\": [\"Dublin\", \"Edinburgh\", \"Glasgow\"]}",
+  "output": "<tool_call>\n{\"name\": \"delete_entities\", \"arguments\": {\"entityNames\": [\"Dublin\", \"Edinburgh\", \"Glasgow\"]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_entities",
+   "arguments": {
+    "entityNames": [
+     "Dublin",
+     "Edinburgh",
+     "Glasgow"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Create a new directory at stats/heart_rate/2024 for storing heart rate analysis files",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"stats/heart_rate/2024\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"stats/heart_rate/2024\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "stats/heart_rate/2024"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show that the dataset \"CIFAR-10\" originates from the project \"Image Classification Benchmark\" and is stored at \"data/cifar10\".",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"CIFAR-10\", \"relationType\": \"derivedFrom\", \"to\": \"Image Classification Benchmark\"}, {\"from\": \"CIFAR-10\", \"relationType\": \"storedAt\", \"to\": \"data/cifar10\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"CIFAR-10\", \"relationType\": \"originatesFrom\", \"to\": \"Image Classification Benchmark\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "CIFAR-10",
+      "relationType": "originatesFrom",
+      "to": "Image Classification Benchmark"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "I want a folder to keep the action items from the last sprint retro meeting.",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"meetings/sprint_retro/action_items\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"meetings/sprint_retro/action_items\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "meetings/sprint_retro/action_items"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Fetch the last 8 lines from the markdown file notes/2023_readings.md to see recent additions.",
+  "tool": "read_text_file",
+  "gold_args": "{\"path\": \"notes/2023_readings.md\", \"tail\": 8}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"path\": \"notes/2023_readings.md\", \"tail\": 8}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "path": "notes/2023_readings.md",
+    "tail": 8
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Give me all tasks, any status, no priority filter",
+  "tool": "list_tasks",
+  "gold_args": "{\"status\": \"all\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"priority\": null, \"status\": \"all\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "priority": null,
+    "status": "all"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Read the expense categories list and the corresponding limits from config/categories.txt and config/limits.json.",
+  "tool": "read_multiple_files",
+  "gold_args": "{\"paths\": [\"config/categories.txt\", \"config/limits.json\"]}",
+  "output": "<tool_call>\n{\"name\": \"read_multiple_files\", \"arguments\": {\"paths\": [\"config/categories.txt\", \"config/limits.json\"]}}\n</tool_call>",
+  "pred": {
+   "name": "read_multiple_files",
+   "arguments": {
+    "paths": [
+     "config/categories.txt",
+     "config/limits.json"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Swap out the deprecated function call in src/lib/math.js with the new API.",
+  "tool": "edit_file",
+  "gold_args": "{\"dryRun\": false, \"edits\": [{\"newText\": \"newSum(a, b)\", \"oldText\": \"oldSum(a, b)\"}], \"path\": \"src/lib/math.js\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"edits\": [{\"newText\": \"export function add(a, b) { return a + b; }\", \"oldText\": \"export function add(a, b) { return a - b; }\"}], \"path\": \"src/lib/math.js\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "edits": [
+     {
+      "newText": "export function add(a, b) { return a + b; }",
+      "oldText": "export function add(a, b) { return a - b; }"
+     }
+    ],
+    "path": "src/lib/math.js"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Retrieve venues with built\u2011in stages for a dance competition in Los Angeles",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"Retrieve venues with built\\u2011in stages for a dance competition in Los Angeles\"}",
+  "output": "<tool_call>\n{\"name\": \"search_nodes\", \"arguments\": {\"query\": \"Retrieve venues with built\u2011in stages for a dance competition in Los Angeles\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_nodes",
+   "arguments": {
+    "query": "Retrieve venues with built\u2011in stages for a dance competition in Los Angeles"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Delete the \"meeting minutes\" entry in notes/meeting.txt and the \"project ideas\" entry in notes/ideas.md.",
+  "tool": "delete_observations",
+  "gold_args": "{\"deletions\": [{\"entityName\": \"notes/meeting.txt\", \"observations\": [\"meeting minutes\"]}, {\"entityName\": \"notes/ideas.md\", \"observations\": [\"project ideas\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"delete_observations\", \"arguments\": {\"deletions\": [{\"entityName\": \"notes/meeting.txt\", \"observations\": [\"meeting minutes\"]}, {\"entityName\": \"notes/ideas.md\", \"observations\": [\"project ideas\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_observations",
+   "arguments": {
+    "deletions": [
+     {
+      "entityName": "notes/meeting.txt",
+      "observations": [
+       "meeting minutes"
+      ]
+     },
+     {
+      "entityName": "notes/ideas.md",
+      "observations": [
+       "project ideas"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show all folders and files inside the reading tracker at tracker/reading/",
+  "tool": "directory_tree",
+  "gold_args": "{\"path\": \"tracker/reading/\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"tracker/reading/\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "tracker/reading/"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "Find nodes covering renewable energy storage solutions using lithium-ion batteries",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"renewable energy storage lithium-ion batteries\"}",
+  "output": "<tool_call>\n{\"name\": \"search_nodes\", \"arguments\": {\"query\": \"Find nodes covering renewable energy storage solutions using lithium-ion batteries\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_nodes",
+   "arguments": {
+    "query": "Find nodes covering renewable energy storage solutions using lithium-ion batteries"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Create a database entity named UserDB, type database, and note its connection string.",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"database\", \"name\": \"UserDB\", \"observations\": [\"PostgreSQL instance for storing user profiles.\", \"Connection string stored in config/db.yaml\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"database\", \"name\": \"UserDB\", \"observations\": [\"Connection string: user=alice;password=secret;server=localhost\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "database",
+      "name": "UserDB",
+      "observations": [
+       "Connection string: user=alice;password=secret;server=localhost"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Make the directory src/components/inputs/text_input",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"src/components/inputs/text_input\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"src/components/inputs/text_input\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "src/components/inputs/text_input"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Remove the entry \"Body weight: 70kg\" from the entity HealthMetrics.",
+  "tool": "delete_observations",
+  "gold_args": "{\"deletions\": [{\"entityName\": \"HealthMetrics\", \"observations\": [\"Body weight: 70kg\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"delete_observations\", \"arguments\": {\"deletions\": [{\"entityName\": \"HealthMetrics\", \"observations\": [\"Body weight: 70kg\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_observations",
+   "arguments": {
+    "deletions": [
+     {
+      "entityName": "HealthMetrics",
+      "observations": [
+       "Body weight: 70kg"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Read everything in travel/budget_breakdown.txt; I need the complete breakdown for my upcoming trip.",
+  "tool": "read_text_file",
+  "gold_args": "{\"path\": \"travel/budget_breakdown.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"path\": \"travel/budget_breakdown.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "path": "travel/budget_breakdown.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Help me get the creation and modification times for the script scripts/run_analysis.sh.",
+  "tool": "get_file_info",
+  "gold_args": "{\"path\": \"scripts/run_analysis.sh\"}",
+  "output": "<tool_call>\n{\"name\": \"get_file_info\", \"arguments\": {\"path\": \"scripts/run_analysis.sh\"}}\n</tool_call>",
+  "pred": {
+   "name": "get_file_info",
+   "arguments": {
+    "path": "scripts/run_analysis.sh"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Create a new file called onboarding.md in the docs folder with a brief guide",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"# Onboarding Guide\\n\\nWelcome to the team!\", \"path\": \"docs/onboarding.md\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"# Onboarding Guide\\n\\nWelcome to our team! Here's a quick overview of how to get started.\\n\\n## Setup\\n1. Clone the repository\\n2. Run `npm install`\\n3. Start with `npm start`\\n\\n## Resources\\n- Code style guide: https://github.com/example/style-guide\\n- Team chat: Slack channel #general\\n\", \"path\": \"docs/onboarding.md\"}}\n</tool_call>",
+  "pred": {
+   "name": "write_file",
+   "arguments": {
+    "content": "# Onboarding Guide\n\nWelcome to our team! Here's a quick overview of how to get started.\n\n## Setup\n1. Clone the repository\n2. Run `npm install`\n3. Start with `npm start`\n\n## Resources\n- Code style guide: https://github.com/example/style-guide\n- Team chat: Slack channel #general\n",
+    "path": "docs/onboarding.md"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Could you read both of my notes on visa requirements for Canada and Mexico? The files are NorthAmerica/visa_canada.txt and NorthAmerica/visa_mexico.txt.",
+  "tool": "read_multiple_files",
+  "gold_args": "{\"paths\": [\"NorthAmerica/visa_canada.txt\", \"NorthAmerica/visa_mexico.txt\"]}",
+  "output": "<tool_call>\n{\"name\": \"read_multiple_files\", \"arguments\": {\"paths\": [\"NorthAmerica/visa_canada.txt\", \"NorthAmerica/visa_mexico.txt\"]}}\n</tool_call>",
+  "pred": {
+   "name": "read_multiple_files",
+   "arguments": {
+    "paths": [
+     "NorthAmerica/visa_canada.txt",
+     "NorthAmerica/visa_mexico.txt"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Add a new entity named Retirement Account, type InvestmentAccount, with observations on contributions and current balance.",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"InvestmentAccount\", \"name\": \"Retirement Account\", \"observations\": [\"Contributions $2,000\", \"Balance $45,000\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"InvestmentAccount\", \"name\": \"Retirement Account\", \"observations\": [\"Contributions $5000\", \"Current Balance $120000\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "InvestmentAccount",
+      "name": "Retirement Account",
+      "observations": [
+       "Contributions $5000",
+       "Current Balance $120000"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Show the entire hierarchy of my credit card statements in statements/credit_cards, ignoring any CSV exports that start with export_",
+  "tool": "directory_tree",
+  "gold_args": "{\"excludePatterns\": [\"export_*.csv\"], \"path\": \"statements/credit_cards\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"excludePatterns\": [\"export_*\"], \"path\": \"statements/credit_cards\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "excludePatterns": [
+     "export_*"
+    ],
+    "path": "statements/credit_cards"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Please ensure there's a place for the project kickoff meeting recordings.",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"meetings/project_kickoff/recordings\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"meetings/project_kickoff\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "meetings/project_kickoff"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Could you finish task 1001 for me, please?",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 1001}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 1001}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 1001
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Generate a relation stating that the Legal counsel advises the CEO.",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"Legal counsel\", \"relationType\": \"advises\", \"to\": \"CEO\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"Legal counsel\", \"relationType\": \"advises\", \"to\": \"CEO\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "Legal counsel",
+      "relationType": "advises",
+      "to": "CEO"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Enumerate all items in the group/projects directory",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"group/projects\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"group/projects\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "group/projects"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Read the whole file src/diary/entry_2023.txt so i can check the content.",
+  "tool": "read_text_file",
+  "gold_args": "{\"path\": \"src/diary/entry_2023.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"path\": \"src/diary/entry_2023.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "path": "src/diary/entry_2023.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "In the schedule/plan.xlsx file replace the cell text \"Team meeting\" with \"All\u2011hands meeting\"",
+  "tool": "edit_file",
+  "gold_args": "{\"edits\": [{\"newText\": \"All\\u2011hands meeting\", \"oldText\": \"Team meeting\"}], \"path\": \"schedule/plan.xlsx\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"edits\": [{\"newText\": \"All\u2011hands meeting\", \"oldText\": \"Team meeting\"}], \"path\": \"schedule/plan.xlsx\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "edits": [
+     {
+      "newText": "All\u2011hands meeting",
+      "oldText": "Team meeting"
+     }
+    ],
+    "path": "schedule/plan.xlsx"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Add an entity called CoreBlast of type StrengthExercise and note the sets, reps and focus on abs",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"StrengthExercise\", \"name\": \"CoreBlast\", \"observations\": [\"Sets: 4\", \"Reps: 12\", \"Focus: abs\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"StrengthExercise\", \"name\": \"CoreBlast\", \"observations\": [\"Sets: 3\", \"Reps: 15\", \"Focus: Abs\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "StrengthExercise",
+      "name": "CoreBlast",
+      "observations": [
+       "Sets: 3",
+       "Reps: 15",
+       "Focus: Abs"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "In shopping/plan.txt replace \"Buy milk\" with \"Buy almond milk\", then show the diff",
+  "tool": "edit_file",
+  "gold_args": "{\"dryRun\": true, \"edits\": [{\"newText\": \"Buy almond milk\", \"oldText\": \"Buy milk\"}], \"path\": \"shopping/plan.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"dryRun\": true, \"edits\": [{\"newText\": \"Buy almond milk\", \"oldText\": \"Buy milk\"}], \"path\": \"shopping/plan.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "dryRun": true,
+    "edits": [
+     {
+      "newText": "Buy almond milk",
+      "oldText": "Buy milk"
+     }
+    ],
+    "path": "shopping/plan.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "List catering services that offer vegan menus in New York City",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"vegan catering services New York City\"}",
+  "output": "<tool_call>\n{\"name\": \"search_nodes\", \"arguments\": {\"query\": \"List catering services that offer vegan menus in New York City\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_nodes",
+   "arguments": {
+    "query": "List catering services that offer vegan menus in New York City"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Create a collaboration link: Ian works with Julia on the analytics project.",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"Ian\", \"relationType\": \"collaborates with\", \"to\": \"Julia\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"Ian\", \"relationType\": \"works with\", \"to\": \"Julia\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "Ian",
+      "relationType": "works with",
+      "to": "Julia"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Which tasks are about 'cooking dinner'?",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"cooking dinner\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"cooking dinner\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "cooking dinner"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "List everything inside the maps folder for my road trip.",
+  "tool": "directory_tree",
+  "gold_args": "{\"path\": \"travel/maps\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"maps\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "maps"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "Please mark task 66 as done \u2013 the final budget approval is complete.",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 66}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 66}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 66
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please make a directory for the grocery shopping checklist text file: checklists/groceries/oct_checklist.txt",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"checklists/groceries/oct_checklist.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"checklists/groceries/oct_checklist.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "checklists/groceries/oct_checklist.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Fetch the node called pantry snacks selection",
+  "tool": "open_nodes",
+  "gold_args": "{\"names\": [\"pantry snacks selection\"]}",
+  "output": "<tool_call>\n{\"name\": \"open_nodes\", \"arguments\": {\"names\": [\"pantry snacks selection\"]}}\n</tool_call>",
+  "pred": {
+   "name": "open_nodes",
+   "arguments": {
+    "names": [
+     "pantry snacks selection"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "recipe chocolate chip cookies",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"recipe chocolate chip cookies\"}",
+  "output": "<tool_call>\n{\"name\": \"search_nodes\", \"arguments\": {\"query\": \"recipe chocolate chip cookies\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_nodes",
+   "arguments": {
+    "query": "recipe chocolate chip cookies"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Open nodes for MarketAnalysis, CompetitivePosition, and InvestmentOpportunity",
+  "tool": "open_nodes",
+  "gold_args": "{\"names\": [\"MarketAnalysis\", \"CompetitivePosition\", \"InvestmentOpportunity\"]}",
+  "output": "<tool_call>\n{\"name\": \"open_nodes\", \"arguments\": {\"names\": [\"MarketAnalysis\", \"CompetitivePosition\", \"InvestmentOpportunity\"]}}\n</tool_call>",
+  "pred": {
+   "name": "open_nodes",
+   "arguments": {
+    "names": [
+     "MarketAnalysis",
+     "CompetitivePosition",
+     "InvestmentOpportunity"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Create a file notes/investment_goals.md containing: \"# Investment Goals\\n- Emergency Fund: $20,000\\n- Retirement: $500,000 by age 65\\n- Real Estate: $150,000 down payment\"",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"# Investment Goals\\n- Emergency Fund: $20,000\\n- Retirement: $500,000 by age 65\\n- Real Estate: $150,000 down payment\", \"path\": \"notes/investment_goals.md\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"# Investment Goals\\n- Emergency Fund: $20,000\\n- Retirement: $500,000 by age 65\\n- Real Estate: $150,000 down payment\", \"path\": \"notes/investment_goals.md\"}}\n</tool_call>",
+  "pred": {
+   "name": "write_file",
+   "arguments": {
+    "content": "# Investment Goals\n- Emergency Fund: $20,000\n- Retirement: $500,000 by age 65\n- Real Estate: $150,000 down payment",
+    "path": "notes/investment_goals.md"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Find tasks mentioning 'nutrition' for workout planning",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"nutrition\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"nutrition\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "nutrition"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Open the file list for event-planning/it_support",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"event-planning/it_support\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"event-planning/it_support\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "event-planning/it_support"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show all tasks, both open and done, that are marked as high priority for my history revision.",
+  "tool": "list_tasks",
+  "gold_args": "{\"priority\": \"high\", \"status\": \"all\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"priority\": \"high\", \"status\": \"all\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "priority": "high",
+    "status": "all"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please delete the observations \"Squat max weight: 120kg\", \"Bench press max weight: 80kg\" from the entity StrengthRecords.",
+  "tool": "delete_observations",
+  "gold_args": "{\"deletions\": [{\"entityName\": \"StrengthRecords\", \"observations\": [\"Squat max weight: 120kg\", \"Bench press max weight: 80kg\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"delete_observations\", \"arguments\": {\"deletions\": [{\"entityName\": \"StrengthRecords\", \"observations\": [\"Squat max weight: 120kg\", \"Bench press max weight: 80kg\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_observations",
+   "arguments": {
+    "deletions": [
+     {
+      "entityName": "StrengthRecords",
+      "observations": [
+       "Squat max weight: 120kg",
+       "Bench press max weight: 80kg"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Register a new entity called Corporate Tax Department, type TaxAuthority, with observations on recent tax filings and refunds.",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"TaxAuthority\", \"name\": \"Corporate Tax Department\", \"observations\": [\"2023 filing submitted\", \"Refund $200K pending\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"TaxAuthority\", \"name\": \"Corporate Tax Department\", \"observations\": [\"Filing Q3 taxes\", \"Refund $5M\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "TaxAuthority",
+      "name": "Corporate Tax Department",
+      "observations": [
+       "Filing Q3 taxes",
+       "Refund $5M"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Show me all files in the research data folder",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"data/research\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"research/data\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "research/data"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "In study_notes/math_notes.txt replace the equation \"E=mc^2\" with \"E=mc^2 (energy-mass equivalence)\" to add clarification.",
+  "tool": "edit_file",
+  "gold_args": "{\"edits\": [{\"newText\": \"E=mc^2 (energy-mass equivalence)\", \"oldText\": \"E=mc^2\"}], \"path\": \"study_notes/math_notes.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"edits\": [{\"newText\": \"E=mc^2 (energy-mass equivalence)\", \"oldText\": \"E=mc^2\"}], \"path\": \"study_notes/math_notes.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "edits": [
+     {
+      "newText": "E=mc^2 (energy-mass equivalence)",
+      "oldText": "E=mc^2"
+     }
+    ],
+    "path": "study_notes/math_notes.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Search for notes with the exact title \"Vacation Ideas\" in the folder notes/travel",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"Search for notes with the exact title \\\"Vacation Ideas\\\" in the folder notes/travel\"}",
+  "output": "<tool_call>\n{\"name\": \"search_files\", \"arguments\": {\"pattern\": \"Vacation Ideas\", \"path\": \"notes/travel\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_files",
+   "arguments": {
+    "pattern": "Vacation Ideas",
+    "path": "notes/travel"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "Create the directory structure where we'll store the agenda templates for weekly syncs.",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"templates/weekly_sync/agenda\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"syncs/weekly/agenda\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "syncs/weekly/agenda"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Show all tasks that mention 'economics' in the title",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"economics\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"economics\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "economics"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Read the first 10 lines of the meeting notes stored in notes/weekly_sync.md",
+  "tool": "read_text_file",
+  "gold_args": "{\"head\": 10, \"path\": \"notes/weekly_sync.md\"}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"head\": 10, \"path\": \"notes/weekly_sync.md\"}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "head": 10,
+    "path": "notes/weekly_sync.md"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Get the metadata of the study schedule spreadsheet planning/study_schedule_2024.xlsx to verify its last modified time.",
+  "tool": "get_file_info",
+  "gold_args": "{\"path\": \"planning/study_schedule_2024.xlsx\"}",
+  "output": "<tool_call>\n{\"name\": \"get_file_info\", \"arguments\": {\"path\": \"planning/study_schedule_2024.xlsx\"}}\n</tool_call>",
+  "pred": {
+   "name": "get_file_info",
+   "arguments": {
+    "path": "planning/study_schedule_2024.xlsx"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Fetch the file attributes for the onboarding checklist located at onboarding/checklist.txt.",
+  "tool": "get_file_info",
+  "gold_args": "{\"path\": \"onboarding/checklist.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"get_file_info\", \"arguments\": {\"path\": \"onboarding/checklist.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "get_file_info",
+   "arguments": {
+    "path": "onboarding/checklist.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Make sure the folder groceries/list exists at groceries/list",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"groceries/list\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"groceries/list\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "groceries/list"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Create a task 'Confirm cruise cabin selection' due 2026-11-10, high priority.",
+  "tool": "add_task",
+  "gold_args": "{\"due\": \"2026-11-10\", \"priority\": \"high\", \"title\": \"Confirm cruise cabin selection\"}",
+  "output": "<tool_call>\n{\"name\": \"add_task\", \"arguments\": {\"due\": \"2026-11-10\", \"priority\": \"high\", \"title\": \"Confirm cruise cabin selection\"}}\n</tool_call>",
+  "pred": {
+   "name": "add_task",
+   "arguments": {
+    "due": "2026-11-10",
+    "priority": "high",
+    "title": "Confirm cruise cabin selection"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Create a plain text file finance/tax_estimate.txt with the following estimate: \"Estimated Tax Liability for 2024: $45,000\"",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"Estimated Tax Liability for 2024: $45,000\", \"path\": \"finance/tax_estimate.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"Estimated Tax Liability for 2024: $45,000\", \"path\": \"finance/tax_estimate.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "write_file",
+   "arguments": {
+    "content": "Estimated Tax Liability for 2024: $45,000",
+    "path": "finance/tax_estimate.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Link my student loan principal payments to the reduction of total debt.",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"Student Loan Principal Payments\", \"relationType\": \"decreases\", \"to\": \"Total Debt\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"Student Loan Principal Payment\", \"relationType\": \"reduces\", \"to\": \"Total Debt\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "Student Loan Principal Payment",
+      "relationType": "reduces",
+      "to": "Total Debt"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Add connections: Bangkok -> Grand Palace as cultural landmark, Phuket -> Patong Beach as party area",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"Bangkok\", \"relationType\": \"cultural landmark\", \"to\": \"Grand Palace\"}, {\"from\": \"Phuket\", \"relationType\": \"party area\", \"to\": \"Patong Beach\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"Bangkok\", \"relationType\": \"cultural landmark\", \"to\": \"Grand Palace\"}, {\"from\": \"Phuket\", \"relationType\": \"party area\", \"to\": \"Patong Beach\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "Bangkok",
+      "relationType": "cultural landmark",
+      "to": "Grand Palace"
+     },
+     {
+      "from": "Phuket",
+      "relationType": "party area",
+      "to": "Patong Beach"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Remove \"Client feedback: needs UI redesign\" from the entity DesignSync.",
+  "tool": "delete_observations",
+  "gold_args": "{\"deletions\": [{\"entityName\": \"DesignSync\", \"observations\": [\"Client feedback: needs UI redesign\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"delete_observations\", \"arguments\": {\"deletions\": [{\"entityName\": \"DesignSync\", \"observations\": [\"Client feedback: needs UI redesign\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_observations",
+   "arguments": {
+    "deletions": [
+     {
+      "entityName": "DesignSync",
+      "observations": [
+       "Client feedback: needs UI redesign"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show me the last 3 lines of the sponsor agreements stored in contracts/sponsor_agreements.txt",
+  "tool": "read_text_file",
+  "gold_args": "{\"path\": \"contracts/sponsor_agreements.txt\", \"tail\": 3}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"path\": \"contracts/sponsor_agreements.txt\", \"tail\": 3}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "path": "contracts/sponsor_agreements.txt",
+    "tail": 3
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Read the budget revision proposals from proposals/revision_a.docx and proposals/revision_b.docx.",
+  "tool": "read_multiple_files",
+  "gold_args": "{\"paths\": [\"proposals/revision_a.docx\", \"proposals/revision_b.docx\"]}",
+  "output": "<tool_call>\n{\"name\": \"read_multiple_files\", \"arguments\": {\"paths\": [\"proposals/revision_a.docx\", \"proposals/revision_b.docx\"]}}\n</tool_call>",
+  "pred": {
+   "name": "read_multiple_files",
+   "arguments": {
+    "paths": [
+     "proposals/revision_a.docx",
+     "proposals/revision_b.docx"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Establish that my freelance project income feeds into my discretionary spending pool.",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"Freelance Project Income\", \"relationType\": \"credits\", \"to\": \"Discretionary Spending Pool\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"Freelance Project Income\", \"relationType\": \"feedsInto\", \"to\": \"Discretionary Spending Pool\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "Freelance Project Income",
+      "relationType": "feedsInto",
+      "to": "Discretionary Spending Pool"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Create dir for the weekly standup with team and add a subfolder for slides",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"meetings/standup/slides\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"meetings/weekly_standup/team/slides\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "meetings/weekly_standup/team/slides"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "List the contents of my journal directory in detail",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"journal\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"journal\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "journal"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Purge Ottawa, Montreal, and Halifax from the records",
+  "tool": "delete_entities",
+  "gold_args": "{\"entityNames\": [\"Ottawa\", \"Montreal\", \"Halifax\"]}",
+  "output": "<tool_call>\n{\"name\": \"delete_entities\", \"arguments\": {\"entityNames\": [\"Ottawa\", \"Montreal\", \"Halifax\"]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_entities",
+   "arguments": {
+    "entityNames": [
+     "Ottawa",
+     "Montreal",
+     "Halifax"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Remove the observations \"New hire onboarding completed\" and \"Training session on security protocols\" from the entity HRMeeting.",
+  "tool": "delete_observations",
+  "gold_args": "{\"deletions\": [{\"entityName\": \"HRMeeting\", \"observations\": [\"New hire onboarding completed\", \"Training session on security protocols\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"delete_observations\", \"arguments\": {\"deletions\": [{\"entityName\": \"HRMeeting\", \"observations\": [\"New hire onboarding completed\", \"Training session on security protocols\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_observations",
+   "arguments": {
+    "deletions": [
+     {
+      "entityName": "HRMeeting",
+      "observations": [
+       "New hire onboarding completed",
+       "Training session on security protocols"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I want a place for my HIIT schedule files, please make hiit/schedule/2024_q3",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"hiit/schedule/2024_q3\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"hiit/schedule/2024_q3\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "hiit/schedule/2024_q3"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I would like to delete the observations \"Travel itinerary updated\" and \"Hotel reservations confirmed\" from the BusinessTrip entity.",
+  "tool": "delete_observations",
+  "gold_args": "{\"deletions\": [{\"entityName\": \"BusinessTrip\", \"observations\": [\"Travel itinerary updated\", \"Hotel reservations confirmed\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"delete_observations\", \"arguments\": {\"deletions\": [{\"entityName\": \"BusinessTrip\", \"observations\": [\"Travel itinerary updated\", \"Hotel reservations confirmed\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_observations",
+   "arguments": {
+    "deletions": [
+     {
+      "entityName": "BusinessTrip",
+      "observations": [
+       "Travel itinerary updated",
+       "Hotel reservations confirmed"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Set task 21, related to the emergency plan, as finished.",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 21}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 21}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 21
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Delete 'ExpiredLicenseInfo' and 'OutdatedProtocol' from the knowledge graph.",
+  "tool": "delete_entities",
+  "gold_args": "{\"entityNames\": [\"ExpiredLicenseInfo\", \"OutdatedProtocol\"]}",
+  "output": "<tool_call>\n{\"name\": \"delete_entities\", \"arguments\": {\"entityNames\": [\"ExpiredLicenseInfo\", \"OutdatedProtocol\"]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_entities",
+   "arguments": {
+    "entityNames": [
+     "ExpiredLicenseInfo",
+     "OutdatedProtocol"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Check the produce inventory from produce/inventory.csv and the produce ordering list from produce/orders.csv",
+  "tool": "read_multiple_files",
+  "gold_args": "{\"paths\": [\"produce/inventory.csv\", \"produce/orders.csv\"]}",
+  "output": "<tool_call>\n{\"name\": \"read_multiple_files\", \"arguments\": {\"paths\": [\"produce/inventory.csv\", \"produce/orders.csv\"]}}\n</tool_call>",
+  "pred": {
+   "name": "read_multiple_files",
+   "arguments": {
+    "paths": [
+     "produce/inventory.csv",
+     "produce/orders.csv"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Find nodes of people who received the 'Employee of the Month' award in Q3 2023",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"Find nodes of people who received the 'Employee of the Month' award in Q3 2023\"}",
+  "output": "<tool_call>\n{\"name\": \"search_nodes\", \"arguments\": {\"query\": \"Find nodes of people who received the 'Employee of the Month' award in Q3 2023\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_nodes",
+   "arguments": {
+    "query": "Find nodes of people who received the 'Employee of the Month' award in Q3 2023"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please delete the entities \"StrengthTrainingBasics\" and \"FlexibilityRoutine\" from the graph.",
+  "tool": "delete_entities",
+  "gold_args": "{\"entityNames\": [\"StrengthTrainingBasics\", \"FlexibilityRoutine\"]}",
+  "output": "<tool_call>\n{\"name\": \"delete_entities\", \"arguments\": {\"entityNames\": [\"StrengthTrainingBasics\", \"FlexibilityRoutine\"]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_entities",
+   "arguments": {
+    "entityNames": [
+     "StrengthTrainingBasics",
+     "FlexibilityRoutine"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Generate a full directory tree of my reading list folder located at reading/list/",
+  "tool": "directory_tree",
+  "gold_args": "{\"path\": \"reading/list/\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"path\": \"reading/list/\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "path": "reading/list/"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please generate a file named data/metadata.json that contains JSON metadata describing the variables used in our socioeconomic study dataset.",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"{\\\"variables\\\": [{\\\"name\\\": \\\"income\\\", \\\"type\\\": \\\"float\\\", \\\"description\\\": \\\"Annual household income in USD\\\"}, {\\\"name\\\": \\\"education_years\\\", \\\"type\\\": \\\"integer\\\", \\\"description\\\": \\\"Years of formal education\\\"}, {\\\"name\\\": \\\"employment_status\\\", \\\"type\\\": \\\"categorical\\\", \\\"categories\\\": [\\\"employed\\\", \\\"unemployed\\\", \\\"student\\\", \\\"retired\\\"], \\\"description\\\": \\\"Current employment situation\\\"}, {\\\"name\\\": \\\"region\\\", \\\"type\\\": \\\"string\\\", \\\"description\\\": \\\"Geographic region of residence\\\"}]}\", \"path\": \"data/metadata.json\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"{\\n  \\\"variables\\\": [\\n    {\\n      \\\"name\\\": \\\"income\\\",\\n      \\\"type\\\": \\\"numeric\\\",\\n      \\\"description\\\": \\\"Annual household income in USD\\\"\\n    },\\n    {\\n      \\\"name\\\": \\\"education\\\",\\n      \\\"type\\\": \\\"categorical\\\",\\n      \\\"description\\\": \\\"Highest level of education completed\\\"\\n    },\\n    {\\n      \\\"name\\\": \\\"age\\\",\\n      \\\"type\\\": \\\"numeric\\\",\\n      \\\"description\\\": \\\"Age of the primary household earner\\\"\\n    }\\n  ]\\n}\", \"path\": \"data/metadata.json\"}}\n</tool_call>",
+  "pred": {
+   "name": "write_file",
+   "arguments": {
+    "content": "{\n  \"variables\": [\n    {\n      \"name\": \"income\",\n      \"type\": \"numeric\",\n      \"description\": \"Annual household income in USD\"\n    },\n    {\n      \"name\": \"education\",\n      \"type\": \"categorical\",\n      \"description\": \"Highest level of education completed\"\n    },\n    {\n      \"name\": \"age\",\n      \"type\": \"numeric\",\n      \"description\": \"Age of the primary household earner\"\n    }\n  ]\n}",
+    "path": "data/metadata.json"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "I would appreciate it if you could delete the following entities: \"PilatesBeginner\" and \"HIITAdvanced\".",
+  "tool": "delete_entities",
+  "gold_args": "{\"entityNames\": [\"PilatesBeginner\", \"HIITAdvanced\"]}",
+  "output": "<tool_call>\n{\"name\": \"delete_entities\", \"arguments\": {\"entityNames\": [\"PilatesBeginner\", \"HIITAdvanced\"]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_entities",
+   "arguments": {
+    "entityNames": [
+     "PilatesBeginner",
+     "HIITAdvanced"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Find all nodes related to the authentication flow",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"authentication flow\"}",
+  "output": "<tool_call>\n{\"name\": \"search_nodes\", \"arguments\": {\"query\": \"Find all nodes related to the authentication flow\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_nodes",
+   "arguments": {
+    "query": "Find all nodes related to the authentication flow"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Create an entity named \"1984\" of type \"Dystopian Novel\" and include observations about its author, publication year, and the concept of Big Brother.",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"Dystopian Novel\", \"name\": \"1984\", \"observations\": [\"Author: George Orwell\", \"Published: 1949\", \"Introduces the surveillance state concept of Big Brother.\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"Dystopian Novel\", \"name\": \"1984\", \"observations\": [\"Author: George Orwell\", \"Published: 1949\", \"Features the concept of Big Brother.\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "Dystopian Novel",
+      "name": "1984",
+      "observations": [
+       "Author: George Orwell",
+       "Published: 1949",
+       "Features the concept of Big Brother."
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Locate tasks with the keyword renewable energy in the title",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"renewable energy\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"renewable energy\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "renewable energy"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show me the full file structure of the study guides folder",
+  "tool": "directory_tree",
+  "gold_args": "{\"path\": \"study_guides\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"study_guides\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "study_guides"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "search nodes for a kids birthday clown in los angeles",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"search nodes for a kids birthday clown in los angeles\"}",
+  "output": "<tool_call>\n{\"name\": \"search_nodes\", \"arguments\": {\"query\": \"search nodes for a kids birthday clown in los angeles\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_nodes",
+   "arguments": {
+    "query": "search nodes for a kids birthday clown in los angeles"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show all tasks, open or closed, that are marked as high priority in the cash flow forecast.",
+  "tool": "list_tasks",
+  "gold_args": "{\"priority\": \"high\", \"status\": \"all\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"priority\": \"high\", \"status\": \"all\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "priority": "high",
+    "status": "all"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Can you create an entity for the Calculus exam with observations about the syllabus and add the notes from the file notes/calc_syllabus.txt?",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"Exam\", \"name\": \"Calculus Exam\", \"observations\": [\"Syllabus for Calculus Exam\", \"Notes from notes/calc_syllabus.txt\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"exam\", \"name\": \"Calculus\", \"observations\": [\"Syllabus: Limits, derivatives, integrals\", \"Notes: notes/calc_syllabus.txt\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "exam",
+      "name": "Calculus",
+      "observations": [
+       "Syllabus: Limits, derivatives, integrals",
+       "Notes: notes/calc_syllabus.txt"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Close the job 9",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 9}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 9}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 9
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Which nodes are stored for Eggs, Yogurt, and Cream?",
+  "tool": "open_nodes",
+  "gold_args": "{\"names\": [\"Eggs\", \"Yogurt\", \"Cream\"]}",
+  "output": "<tool_call>\n{\"name\": \"open_nodes\", \"arguments\": {\"names\": [\"Eggs\", \"Yogurt\", \"Cream\"]}}\n</tool_call>",
+  "pred": {
+   "name": "open_nodes",
+   "arguments": {
+    "names": [
+     "Eggs",
+     "Yogurt",
+     "Cream"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show me the full directory tree for the product management team's roadmap files, excluding any .md files.",
+  "tool": "directory_tree",
+  "gold_args": "{\"excludePatterns\": [\"*.md\"], \"path\": \"product_management/roadmap\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"excludePatterns\": [\"*.md\"], \"path\": \"product/roadmap\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "excludePatterns": [
+     "*.md"
+    ],
+    "path": "product/roadmap"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Create a new budgeting entity named Emergency Fund, type SavingsAccount, with observations about its balance and target amount.",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"SavingsAccount\", \"name\": \"Emergency Fund\", \"observations\": [\"Balance $8,000\", \"Target $10,000\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"SavingsAccount\", \"name\": \"Emergency Fund\", \"observations\": [\"Balance: $5,000\", \"Target: $10,000\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "SavingsAccount",
+      "name": "Emergency Fund",
+      "observations": [
+       "Balance: $5,000",
+       "Target: $10,000"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Delete the observation \"Project kickoff meeting scheduled for 2024-11-01\" from the entity MeetingNotes.",
+  "tool": "delete_observations",
+  "gold_args": "{\"deletions\": [{\"entityName\": \"MeetingNotes\", \"observations\": [\"Project kickoff meeting scheduled for 2024-11-01\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"delete_observations\", \"arguments\": {\"deletions\": [{\"entityName\": \"MeetingNotes\", \"observations\": [\"Project kickoff meeting scheduled for 2024-11-01\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_observations",
+   "arguments": {
+    "deletions": [
+     {
+      "entityName": "MeetingNotes",
+      "observations": [
+       "Project kickoff meeting scheduled for 2024-11-01"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Add entities for two revenue streams: Subscription Revenue and Advertising Revenue, both type RevenueStream, with recent monthly figures.",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"RevenueStream\", \"name\": \"Subscription Revenue\", \"observations\": [\"Jan $30K\", \"Feb $32K\"]}, {\"entityType\": \"RevenueStream\", \"name\": \"Advertising Revenue\", \"observations\": [\"Jan $15K\", \"Feb $18K\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"RevenueStream\", \"name\": \"Subscription Revenue\", \"observations\": [\"$15k Jan\", \"$16k Feb\"]}, {\"entityType\": \"RevenueStream\", \"name\": \"Advertising Revenue\", \"observations\": [\"$3k Jan\", \"$4k Feb\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "RevenueStream",
+      "name": "Subscription Revenue",
+      "observations": [
+       "$15k Jan",
+       "$16k Feb"
+      ]
+     },
+     {
+      "entityType": "RevenueStream",
+      "name": "Advertising Revenue",
+      "observations": [
+       "$3k Jan",
+       "$4k Feb"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "I need the entities \"Powerlifting101\" and \"YogaAdvanced\" to be deleted from the system.",
+  "tool": "delete_entities",
+  "gold_args": "{\"entityNames\": [\"Powerlifting101\", \"YogaAdvanced\"]}",
+  "output": "<tool_call>\n{\"name\": \"delete_entities\", \"arguments\": {\"entityNames\": [\"Powerlifting101\", \"YogaAdvanced\"]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_entities",
+   "arguments": {
+    "entityNames": [
+     "Powerlifting101",
+     "YogaAdvanced"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Browse the contents of event-planning/contractors",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"event-planning/contractors\"}",
+  "output": "<tool_call>\n{\"name\": \"read_directory\", \"arguments\": {\"path\": \"event-planning/contractors\"}}\n</tool_call>",
+  "pred": {
+   "name": "read_directory",
+   "arguments": {
+    "path": "event-planning/contractors"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "Give me a tree view of the investment data directory 2024/investments, no exclusions",
+  "tool": "directory_tree",
+  "gold_args": "{\"path\": \"2024/investments\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"path\": \"2024/investments\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "path": "2024/investments"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Write a quick recap of the strategy session into a new file named 'strategy_recap.md' in the notes directory.",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"Strategy Recap:\\n- Objective: Increase market share by 10%\\n- Key initiatives: Product diversification, cost optimization\\n- Next steps: Market research, stakeholder alignment\", \"path\": \"notes/strategy_recap.md\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"# Strategy Session Recap\\n\\n## Key Points:\\n- Identified market segments: A, B, C.\\n- Proposed product features: X, Y, Z.\\n- Set budget: $5M.\\n- Timeline: Q3-Q4.\\n- Stakeholders: CEO, CMO, CFO.\\n- Action items: Assign tasks.\\n- Next steps: Detailed plan.\\n\", \"path\": \"notes/strategy_recap.md\"}}\n</tool_call>",
+  "pred": {
+   "name": "write_file",
+   "arguments": {
+    "content": "# Strategy Session Recap\n\n## Key Points:\n- Identified market segments: A, B, C.\n- Proposed product features: X, Y, Z.\n- Set budget: $5M.\n- Timeline: Q3-Q4.\n- Stakeholders: CEO, CMO, CFO.\n- Action items: Assign tasks.\n- Next steps: Detailed plan.\n",
+    "path": "notes/strategy_recap.md"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "docs/README.md replace \"# Project Overview\" with \"# Project Overview \u2013 Updated\"",
+  "tool": "edit_file",
+  "gold_args": "{\"edits\": [{\"newText\": \"# Project Overview \\u2013 Updated\", \"oldText\": \"# Project Overview\"}], \"path\": \"docs/README.md\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"edits\": [{\"newText\": \"# Project Overview \u2013 Updated\", \"oldText\": \"# Project Overview\"}], \"path\": \"docs/README.md\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "edits": [
+     {
+      "newText": "# Project Overview \u2013 Updated",
+      "oldText": "# Project Overview"
+     }
+    ],
+    "path": "docs/README.md"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Mark the task 7 as done",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 7}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 7}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 7
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Set up a directory for my upcoming road trip notes",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"travel/road_trip/notes\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"travel/road_trip/notes\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "travel/road_trip/notes"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show the nested folders and files for the upcoming book club material in club/materials/",
+  "tool": "directory_tree",
+  "gold_args": "{\"path\": \"club/materials/\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"path\": \"club/materials/\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "path": "club/materials/"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "List all files and directories in the event documents folder",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"event_documents\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"events/documents\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "events/documents"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "What files and folders are under my syllabus directory?",
+  "tool": "directory_tree",
+  "gold_args": "{\"path\": \"syllabus\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"syllabus\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "syllabus"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "Show me the full directory structure for the tax filings 2023/tax_filings, but ignore any files ending with .bak",
+  "tool": "directory_tree",
+  "gold_args": "{\"excludePatterns\": [\"*.bak\"], \"path\": \"2023/tax_filings\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"excludePatterns\": [\"*.bak\"], \"path\": \"2023/tax_filings\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "excludePatterns": [
+     "*.bak"
+    ],
+    "path": "2023/tax_filings"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Access nodes: QuantumComputing, Qubit, Superposition",
+  "tool": "open_nodes",
+  "gold_args": "{\"names\": [\"QuantumComputing\", \"Qubit\", \"Superposition\"]}",
+  "output": "<tool_call>\n{\"name\": \"open_nodes\", \"arguments\": {\"names\": [\"QuantumComputing\", \"Qubit\", \"Superposition\"]}}\n</tool_call>",
+  "pred": {
+   "name": "open_nodes",
+   "arguments": {
+    "names": [
+     "QuantumComputing",
+     "Qubit",
+     "Superposition"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I need to locate any tasks titled with \"HIIT\" \u2013 can you do that?",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"HIIT\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"HIIT\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "HIIT"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Find all reading list tasks that mention the keyword \"mystery\" in their titles.",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"mystery\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"mystery\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "mystery"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please provide the directory structure for the quarterly reports saved in reports/q1_2024, omitting any log files.",
+  "tool": "directory_tree",
+  "gold_args": "{\"excludePatterns\": [\"*.log\"], \"path\": \"reports/q1_2024\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"excludePatterns\": [\"*.log\"], \"path\": \"reports/q1_2024\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "excludePatterns": [
+     "*.log"
+    ],
+    "path": "reports/q1_2024"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show me all tasks that mention revision of physics chapter 3?",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"physics chapter 3\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"revision of physics chapter 3\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "revision of physics chapter 3"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Fetch the last 5 lines of the deployment script scripts/deploy.sh to verify the final steps.",
+  "tool": "read_text_file",
+  "gold_args": "{\"path\": \"scripts/deploy.sh\", \"tail\": 5}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"path\": \"scripts/deploy.sh\", \"tail\": 5}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "path": "scripts/deploy.sh",
+    "tail": 5
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show me the medium priority items that are completed.",
+  "tool": "list_tasks",
+  "gold_args": "{\"priority\": \"medium\", \"status\": \"done\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"priority\": \"medium\", \"status\": \"done\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "priority": "medium",
+    "status": "done"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Connect the series \"Harry Potter\" to its first volume \"Harry Potter and the Sorcerer's Stone\" using a \"contains\" relation.",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"Harry Potter\", \"relationType\": \"contains\", \"to\": \"Harry Potter and the Sorcerer's Stone\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"Harry Potter\", \"relationType\": \"contains\", \"to\": \"Harry Potter and the Sorcerer's Stone\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "Harry Potter",
+      "relationType": "contains",
+      "to": "Harry Potter and the Sorcerer's Stone"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Produce a tree view of the PDFs and notes under research/reading_materials",
+  "tool": "directory_tree",
+  "gold_args": "{\"path\": \"research/reading_materials\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"path\": \"research/reading_materials\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "path": "research/reading_materials"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show the top attractions in attractions/italy_top.txt",
+  "tool": "read_text_file",
+  "gold_args": "{\"path\": \"attractions/italy_top.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"path\": \"attractions/italy_top.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "path": "attractions/italy_top.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Generate a file exams/geography_quiz.txt containing the following multiple\u2011choice question: \"What is the capital of Australia? A) Sydney B) Canberra C) Melbourne D) Perth\".",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"What is the capital of Australia? A) Sydney B) Canberra C) Melbourne D) Perth\", \"path\": \"exams/geography_quiz.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"What is the capital of Australia? A) Sydney B) Canberra C) Melbourne D) Perth\", \"path\": \"exams/geography_quiz.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "write_file",
+   "arguments": {
+    "content": "What is the capital of Australia? A) Sydney B) Canberra C) Melbourne D) Perth",
+    "path": "exams/geography_quiz.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show me the full tree of the biography folder, but skip any hidden files.",
+  "tool": "directory_tree",
+  "gold_args": "{\"excludePatterns\": [\".*\"], \"path\": \"biography\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"excludePatterns\": [\".*\"], \"path\": \"biography\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "excludePatterns": [
+     ".*"
+    ],
+    "path": "biography"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I need a folder for my weekly grocery lists, something like groceries/weekly/2023-10.txt",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"groceries/weekly/2023-10.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"groceries/weekly/2023-10.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "groceries/weekly/2023-10.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "lookup music bands that can play at an outdoor garden party",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"lookup music bands that can play at an outdoor garden party\"}",
+  "output": "<tool_call>\n{\"name\": \"search_nodes\", \"arguments\": {\"query\": \"lookup music bands that can play at an outdoor garden party\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_nodes",
+   "arguments": {
+    "query": "lookup music bands that can play at an outdoor garden party"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Mark the job 11 as completed",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 11}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 11}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 11
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Link the grant \"AI for Healthcare\" to the university \"Stanford University\" as the funding institution.",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"AI for Healthcare\", \"relationType\": \"fundedBy\", \"to\": \"Stanford University\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"AI for Healthcare\", \"relationType\": \"fundedBy\", \"to\": \"Stanford University\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "AI for Healthcare",
+      "relationType": "fundedBy",
+      "to": "Stanford University"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "List all tasks, high priority",
+  "tool": "list_tasks",
+  "gold_args": "{\"priority\": \"high\", \"status\": \"all\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"priority\": \"high\", \"status\": \"all\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "priority": "high",
+    "status": "all"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please produce exams/english_literature_essay_prompt.txt with this prompt: \"Discuss the theme of identity in \"The Great Gatsby\" using at least three textual examples.\"",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"Discuss the theme of identity in \\\"The Great Gatsby\\\" using at least three textual examples.\", \"path\": \"exams/english_literature_essay_prompt.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"Discuss the theme of identity in \\\"The Great Gatsby\\\" using at least three textual examples.\", \"path\": \"exams/english_literature_essay_prompt.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "write_file",
+   "arguments": {
+    "content": "Discuss the theme of identity in \"The Great Gatsby\" using at least three textual examples.",
+    "path": "exams/english_literature_essay_prompt.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please retrieve the creation time, size, and permissions of the yoga sequence document at yoga/sequence.txt.",
+  "tool": "get_file_info",
+  "gold_args": "{\"path\": \"yoga/sequence.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"get_file_info\", \"arguments\": {\"path\": \"yoga/sequence.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "get_file_info",
+   "arguments": {
+    "path": "yoga/sequence.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Create the entity PhysicsMidterm and add observations including the file path of the study guide.",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"midterm\", \"name\": \"PhysicsMidterm\", \"observations\": [\"Study guide at src/physics/guide.pdf\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"exam\", \"name\": \"PhysicsMidterm\", \"observations\": [\"Study guide: physics_midterm_guide.pdf\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "exam",
+      "name": "PhysicsMidterm",
+      "observations": [
+       "Study guide: physics_midterm_guide.pdf"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Can you change the author name in README.md to Jane Doe?",
+  "tool": "edit_file",
+  "gold_args": "{\"edits\": [{\"newText\": \"Author: Jane Doe\", \"oldText\": \"Author: John Smith\"}], \"path\": \"README.md\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"edits\": [{\"newText\": \"Author: Jane Doe\", \"oldText\": \"Author: John Smith\"}], \"path\": \"README.md\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "edits": [
+     {
+      "newText": "Author: Jane Doe",
+      "oldText": "Author: John Smith"
+     }
+    ],
+    "path": "README.md"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "List tasks containing the word HIIT",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"HIIT\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"HIIT\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "HIIT"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Edit the file study_notes/english_lit.txt by changing \"Read Shakespeare Act 2\" to \"Read Shakespeare Act 2 (focus on themes)\" to specify the study focus.",
+  "tool": "edit_file",
+  "gold_args": "{\"dryRun\": false, \"edits\": [{\"newText\": \"Read Shakespeare Act 2 (focus on themes)\", \"oldText\": \"Read Shakespeare Act 2\"}], \"path\": \"study_notes/english_lit.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"edits\": [{\"newText\": \"Read Shakespeare Act 2 (focus on themes)\", \"oldText\": \"Read Shakespeare Act 2\"}], \"path\": \"study_notes/english_lit.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "edits": [
+     {
+      "newText": "Read Shakespeare Act 2 (focus on themes)",
+      "oldText": "Read Shakespeare Act 2"
+     }
+    ],
+    "path": "study_notes/english_lit.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "I need to compare the methodology sections of the two drafts stored at drafts/method1.txt and drafts/method2.txt to see which one aligns better with the latest guidelines.",
+  "tool": "read_multiple_files",
+  "gold_args": "{\"paths\": [\"drafts/method1.txt\", \"drafts/method2.txt\"]}",
+  "output": "<tool_call>\n{\"name\": \"read_multiple_files\", \"arguments\": {\"paths\": [\"drafts/method1.txt\", \"drafts/method2.txt\"]}}\n</tool_call>",
+  "pred": {
+   "name": "read_multiple_files",
+   "arguments": {
+    "paths": [
+     "drafts/method1.txt",
+     "drafts/method2.txt"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Add task 'Budget discussion'",
+  "tool": "add_task",
+  "gold_args": "{\"title\": \"Budget discussion\"}",
+  "output": "<tool_call>\n{\"name\": \"add_task\", \"arguments\": {\"title\": \"Budget discussion\"}}\n</tool_call>",
+  "pred": {
+   "name": "add_task",
+   "arguments": {
+    "title": "Budget discussion"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Give me all tasks regardless of status or priority",
+  "tool": "list_tasks",
+  "gold_args": "{\"status\": \"all\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"priority\": null, \"status\": \"all\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "priority": null,
+    "status": "all"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Show me the full contents of the src directory",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"src\"}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"path\": \"src\"}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "path": "src"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "Kindly set task 1001 to completed now that the release is live.",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 1001}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 1001}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 1001
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show me all files and folders in the budget spreadsheets folder",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"budget/spreadsheets\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"finance/budget/spreadsheets\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "finance/budget/spreadsheets"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Create task 'Design experiment protocol for testing neural network robustness' due 2026-10-05 high priority.",
+  "tool": "add_task",
+  "gold_args": "{\"due\": \"2026-10-05\", \"priority\": \"high\", \"title\": \"Design experiment protocol for testing neural network robustness\"}",
+  "output": "<tool_call>\n{\"name\": \"add_task\", \"arguments\": {\"due\": \"2026-10-05\", \"priority\": \"high\", \"title\": \"Design experiment protocol for testing neural network robustness\"}}\n</tool_call>",
+  "pred": {
+   "name": "add_task",
+   "arguments": {
+    "due": "2026-10-05",
+    "priority": "high",
+    "title": "Design experiment protocol for testing neural network robustness"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I need to create a relation between the product owner Heidi and the scrum master Ivan, indicating the relation is \"coordinates\". Is that possible?",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"product owner Heidi\", \"relationType\": \"coordinates\", \"to\": \"scrum master Ivan\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"product owner Heidi\", \"relationType\": \"coordinates\", \"to\": \"scrum master Ivan\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "product owner Heidi",
+      "relationType": "coordinates",
+      "to": "scrum master Ivan"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Read the survey results from surveys/q1_responses.txt, surveys/q2_responses.txt, and surveys/q3_responses.txt so I can extract common themes.",
+  "tool": "read_multiple_files",
+  "gold_args": "{\"paths\": [\"surveys/q1_responses.txt\", \"surveys/q2_responses.txt\", \"surveys/q3_responses.txt\"]}",
+  "output": "<tool_call>\n{\"name\": \"read_multiple_files\", \"arguments\": {\"paths\": [\"surveys/q1_responses.txt\", \"surveys/q2_responses.txt\", \"surveys/q3_responses.txt\"]}}\n</tool_call>",
+  "pred": {
+   "name": "read_multiple_files",
+   "arguments": {
+    "paths": [
+     "surveys/q1_responses.txt",
+     "surveys/q2_responses.txt",
+     "surveys/q3_responses.txt"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Locate tasks that include 'running'",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"running\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"running\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "running"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Write a markdown summary to reports/q1_summary.md: \"## Q1 Financial Summary\\n- Revenue: $300,000\\n- Expenses: $210,000\\n- Net Profit: $90,000\"",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"## Q1 Financial Summary\\n- Revenue: $300,000\\n- Expenses: $210,000\\n- Net Profit: $90,000\", \"path\": \"reports/q1_summary.md\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"## Q1 Financial Summary\\n- Revenue: $300,000\\n- Expenses: $210,000\\n- Net Profit: $90,000\", \"path\": \"reports/q1_summary.md\"}}\n</tool_call>",
+  "pred": {
+   "name": "write_file",
+   "arguments": {
+    "content": "## Q1 Financial Summary\n- Revenue: $300,000\n- Expenses: $210,000\n- Net Profit: $90,000",
+    "path": "reports/q1_summary.md"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Read the last 5 lines of the nutrition log at nutrition/weekly_log.txt",
+  "tool": "read_text_file",
+  "gold_args": "{\"path\": \"nutrition/weekly_log.txt\", \"tail\": 5}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"path\": \"nutrition/weekly_log.txt\", \"tail\": 5}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "path": "nutrition/weekly_log.txt",
+    "tail": 5
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "List all files and subfolders in my fitness logs at health/fitness/logs/",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"health/fitness/logs/\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"health/fitness/logs/\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "health/fitness/logs/"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "List everything inside the src directory of the project so I can see all source files and subfolders.",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"src\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"src\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "src"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Open the node \"Crime and Punishment\" to see its relationships.",
+  "tool": "open_nodes",
+  "gold_args": "{\"names\": [\"Crime and Punishment\"]}",
+  "output": "<tool_call>\n{\"name\": \"open_nodes\", \"arguments\": {\"names\": [\"Crime and Punishment\"]}}\n</tool_call>",
+  "pred": {
+   "name": "open_nodes",
+   "arguments": {
+    "names": [
+     "Crime and Punishment"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Replace the outdated train schedule entry for the Paris\u2011Berlin route with the new timings in the file routes.txt and show a preview diff.",
+  "tool": "edit_file",
+  "gold_args": "{\"dryRun\": true, \"edits\": [{\"newText\": \"Paris to Berlin: 09:30 - 15:30\", \"oldText\": \"Paris to Berlin: 08:00 - 14:00\"}], \"path\": \"travel/routes.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"dryRun\": true, \"edits\": [{\"newText\": \"Paris-Berlin: 13:00-15:30\", \"oldText\": \"Paris-Berlin: 12:00-14:30\"}], \"path\": \"routes.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "dryRun": true,
+    "edits": [
+     {
+      "newText": "Paris-Berlin: 13:00-15:30",
+      "oldText": "Paris-Berlin: 12:00-14:30"
+     }
+    ],
+    "path": "routes.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Retrieve nodes: ClimateModel, GreenhouseGases, CarbonSequestration",
+  "tool": "open_nodes",
+  "gold_args": "{\"names\": [\"ClimateModel\", \"GreenhouseGases\", \"CarbonSequestration\"]}",
+  "output": "<tool_call>\n{\"name\": \"open_nodes\", \"arguments\": {\"names\": [\"ClimateModel\", \"GreenhouseGases\", \"CarbonSequestration\"]}}\n</tool_call>",
+  "pred": {
+   "name": "open_nodes",
+   "arguments": {
+    "names": [
+     "ClimateModel",
+     "GreenhouseGases",
+     "CarbonSequestration"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Create a relationship showing that Sarah supervises the HR staff.",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"Sarah\", \"relationType\": \"supervises\", \"to\": \"HR staff\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"Sarah\", \"relationType\": \"supervises\", \"to\": \"HR staff\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "Sarah",
+      "relationType": "supervises",
+      "to": "HR staff"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Save a list of healthy smoothie recipes in a file called \"smoothies.txt\" under my recipes folder. Include ingredients and steps for each.",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"Smoothies\\n1. Berry Blast\\n   Ingredients: mixed berries, banana, almond milk, honey\\n   Steps: Blend all ingredients until smooth.\\n2. Green Power\\n   Ingredients: spinach, pineapple, coconut water, protein powder\\n   Steps: Blend until creamy.\", \"path\": \"recipes/smoothies.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"Green Smoothie\\nIngredients: spinach, banana, almond milk, chia seeds\\nSteps: Blend all ingredients until smooth.\\n\\nBerry Blast Smoothie\\nIngredients: mixed berries, Greek yogurt, honey, ice cubes\\nSteps: Combine all ingredients in a blender and blend until creamy.\\n\\nAvocado Pesto Smoothie\\nIngredients: avocado, basil leaves, garlic cloves, lemon juice, olive oil\\nSteps: Blend all ingredients until smooth and creamy.\\n\\nCarrot Cake Smoothie\\nIngredients: carrots, applesauce, vanilla protein powder, cinnamon\\nSteps: Mix all ingredients in a blender until smooth.\\n\\nPineapple Coconut Smoothie\\nIngredients: pineapple chunks, coconut water, shredded coconut, lime juice\\nSteps: Blend all ingredients until smooth and creamy.\\n\\nBanana Peanut Butter Smoothie\\nIngredients: frozen bananas, peanut butter, almond milk, vanilla extract\\nSteps: Blend all ingredients until smooth and creamy.\\n\\nWatermelon Gazpacho Smoothie\\nIngredients: seedless watermelon, cucumber, tomato, jalapeno pepper, lime juice\\nSteps: Blend all ingredients until smooth and chilled.\\n\\nMatcha Latte Smoothie\\nIngredients",
+  "pred": null,
+  "json_valid": 0,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "Hey, can you wipe out the 'Midterm2023' and 'FinalReview' entities from my study graph?",
+  "tool": "delete_entities",
+  "gold_args": "{\"entityNames\": [\"Midterm2023\", \"FinalReview\"]}",
+  "output": "<tool_call>\n{\"name\": \"delete_entities\", \"arguments\": {\"entityNames\": [\"Midterm2023\", \"FinalReview\"]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_entities",
+   "arguments": {
+    "entityNames": [
+     "Midterm2023",
+     "FinalReview"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Can you give me a list of all tasks, no matter their status?",
+  "tool": "list_tasks",
+  "gold_args": "{\"status\": \"all\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"priority\": null, \"status\": \"all\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "priority": null,
+    "status": "all"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Locate nodes about the CI pipeline in pipeline/ci.yml",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"pipeline/ci.yml\"}",
+  "output": "<tool_call>\n{\"name\": \"search_nodes\", \"arguments\": {\"query\": \"pipeline/ci.yml\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_nodes",
+   "arguments": {
+    "query": "pipeline/ci.yml"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Add a task 'Order protein powder' priority low due 2026-12-01",
+  "tool": "add_task",
+  "gold_args": "{\"due\": \"2026-12-01\", \"priority\": \"low\", \"title\": \"Order protein powder\"}",
+  "output": "<tool_call>\n{\"name\": \"add_task\", \"arguments\": {\"due\": \"2026-12-01\", \"priority\": \"low\", \"title\": \"Order protein powder\"}}\n</tool_call>",
+  "pred": {
+   "name": "add_task",
+   "arguments": {
+    "due": "2026-12-01",
+    "priority": "low",
+    "title": "Order protein powder"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "In notes/chemistry.txt replace the phrase \"pH scale 0-14\" with \"pH scale 0-14 (acidic to basic)\" to provide context.",
+  "tool": "edit_file",
+  "gold_args": "{\"edits\": [{\"newText\": \"pH scale 0-14 (acidic to basic)\", \"oldText\": \"pH scale 0-14\"}], \"path\": \"notes/chemistry.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"edits\": [{\"newText\": \"pH scale 0-14 (acidic to basic)\", \"oldText\": \"pH scale 0-14\"}], \"path\": \"notes/chemistry.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "edits": [
+     {
+      "newText": "pH scale 0-14 (acidic to basic)",
+      "oldText": "pH scale 0-14"
+     }
+    ],
+    "path": "notes/chemistry.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I finished the note on project roadmap, so mark task 7 done.",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 7}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 7}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 7
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Could you please remove the outdated observation 'Visited the Eiffel Tower in 2018' from my Paris itinerary entity?",
+  "tool": "delete_observations",
+  "gold_args": "{\"deletions\": [{\"entityName\": \"Paris itinerary\", \"observations\": [\"Visited the Eiffel Tower in 2018\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"delete_observations\", \"arguments\": {\"deletions\": [{\"entityName\": \"ParisItinerary\", \"observations\": [\"Visited the Eiffel Tower in 2018\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_observations",
+   "arguments": {
+    "deletions": [
+     {
+      "entityName": "ParisItinerary",
+      "observations": [
+       "Visited the Eiffel Tower in 2018"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Add a task: 'Gym membership renewal' with the default priority and no due date.",
+  "tool": "add_task",
+  "gold_args": "{\"due\": null, \"title\": \"Gym membership renewal\"}",
+  "output": "<tool_call>\n{\"name\": \"add_task\", \"arguments\": {\"title\": \"Gym membership renewal\"}}\n</tool_call>",
+  "pred": {
+   "name": "add_task",
+   "arguments": {
+    "title": "Gym membership renewal"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Could you open the nodes titled \"Renewable Energy Storage\" and \"Lithium-Ion Battery Degradation\" for me?",
+  "tool": "open_nodes",
+  "gold_args": "{\"names\": [\"Renewable Energy Storage\", \"Lithium-Ion Battery Degradation\"]}",
+  "output": "<tool_call>\n{\"name\": \"open_nodes\", \"arguments\": {\"names\": [\"Renewable Energy Storage\", \"Lithium-Ion Battery Degradation\"]}}\n</tool_call>",
+  "pred": {
+   "name": "open_nodes",
+   "arguments": {
+    "names": [
+     "Renewable Energy Storage",
+     "Lithium-Ion Battery Degradation"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please provide the full tree view of my savings plan documents in plans/savings/2021.",
+  "tool": "directory_tree",
+  "gold_args": "{\"path\": \"plans/savings/2021\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"path\": \"plans/savings/2021\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "path": "plans/savings/2021"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "best exercises for core stability",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"best exercises for core stability\"}",
+  "output": "<tool_call>\n{\"name\": \"search_nodes\", \"arguments\": {\"query\": \"best exercises for core stability\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_nodes",
+   "arguments": {
+    "query": "best exercises for core stability"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Read the package manifests package.json and pnpm-lock.yaml for dependency inspection.",
+  "tool": "read_multiple_files",
+  "gold_args": "{\"paths\": [\"package.json\", \"pnpm-lock.yaml\"]}",
+  "output": "<tool_call>\n{\"name\": \"read_multiple_files\", \"arguments\": {\"paths\": [\"package.json\", \"pnpm-lock.yaml\"]}}\n</tool_call>",
+  "pred": {
+   "name": "read_multiple_files",
+   "arguments": {
+    "paths": [
+     "package.json",
+     "pnpm-lock.yaml"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "src/styles/main.css replace \"font-size: 14px;\" with \"font-size: 16px;\" and dryRun true",
+  "tool": "edit_file",
+  "gold_args": "{\"dryRun\": true, \"edits\": [{\"newText\": \"font-size: 16px;\", \"oldText\": \"font-size: 14px;\"}], \"path\": \"src/styles/main.css\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"dryRun\": true, \"edits\": [{\"newText\": \"font-size: 16px;\", \"oldText\": \"font-size: 14px;\"}], \"path\": \"src/styles/main.css\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "dryRun": true,
+    "edits": [
+     {
+      "newText": "font-size: 16px;",
+      "oldText": "font-size: 14px;"
+     }
+    ],
+    "path": "src/styles/main.css"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Add a task 'Compile bibliography of machine learning papers from 2020-2021' due 2026-12-01.",
+  "tool": "add_task",
+  "gold_args": "{\"due\": \"2026-12-01\", \"title\": \"Compile bibliography of machine learning papers from 2020-2021\"}",
+  "output": "<tool_call>\n{\"name\": \"add_task\", \"arguments\": {\"due\": \"2026-12-01\", \"title\": \"Compile bibliography of machine learning papers from 2020-2021\"}}\n</tool_call>",
+  "pred": {
+   "name": "add_task",
+   "arguments": {
+    "due": "2026-12-01",
+    "title": "Compile bibliography of machine learning papers from 2020-2021"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Read the investment portfolio files located at investments/portfolio_A.json and investments/portfolio_B.json for analysis.",
+  "tool": "read_multiple_files",
+  "gold_args": "{\"paths\": [\"investments/portfolio_A.json\", \"investments/portfolio_B.json\"]}",
+  "output": "<tool_call>\n{\"name\": \"read_multiple_files\", \"arguments\": {\"paths\": [\"investments/portfolio_A.json\", \"investments/portfolio_B.json\"]}}\n</tool_call>",
+  "pred": {
+   "name": "read_multiple_files",
+   "arguments": {
+    "paths": [
+     "investments/portfolio_A.json",
+     "investments/portfolio_B.json"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I just booked a flight to New York. Create an entity named \"NYC Trip\" of type travel and log the observation \"Flight booked for June 12, 2026, 8:30 AM.\"",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"travel\", \"name\": \"NYC Trip\", \"observations\": [\"Flight booked for June 12, 2026, 8:30 AM.\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"travel\", \"name\": \"NYC Trip\", \"observations\": [\"Flight booked for June 12, 2026, 8:30 AM.\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "travel",
+      "name": "NYC Trip",
+      "observations": [
+       "Flight booked for June 12, 2026, 8:30 AM."
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Check the first 12 lines of the budget_breakdown.txt file, maybe there's a miscalculation",
+  "tool": "read_text_file",
+  "gold_args": "{\"head\": 12, \"path\": \"finance/budget_breakdown.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"head\": 12, \"path\": \"finance/budget_breakdown.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "head": 12,
+    "path": "finance/budget_breakdown.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Task 7 is complete now, please update the system",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 7}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 7}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 7
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show the full file content of training/equipment_list.txt",
+  "tool": "read_text_file",
+  "gold_args": "{\"path\": \"training/equipment_list.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"path\": \"training/equipment_list.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "path": "training/equipment_list.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Find nodes with the name 'LoginForm' in the UI layer",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"LoginForm\"}",
+  "output": "<tool_call>\n{\"name\": \"open_nodes\", \"arguments\": {\"names\": [\"LoginForm\"]}}\n</tool_call>",
+  "pred": {
+   "name": "open_nodes",
+   "arguments": {
+    "names": [
+     "LoginForm"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "Please access the knowledge graph nodes \"Deep Sea Exploration\" and \"Marine Biodiversity Conservation\" for the upcoming seminar.",
+  "tool": "open_nodes",
+  "gold_args": "{\"names\": [\"Deep Sea Exploration\", \"Marine Biodiversity Conservation\"]}",
+  "output": "<tool_call>\n{\"name\": \"open_nodes\", \"arguments\": {\"names\": [\"Deep Sea Exploration\", \"Marine Biodiversity Conservation\"]}}\n</tool_call>",
+  "pred": {
+   "name": "open_nodes",
+   "arguments": {
+    "names": [
+     "Deep Sea Exploration",
+     "Marine Biodiversity Conservation"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please write a file named travel_schedule.txt that shows the timeline: Departure on June 1, Arrival on June 2, Return on June 15.",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"Departure on June 1\\nArrival on June 2\\nReturn on June 15\", \"path\": \"travel_schedule.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"Travel Schedule:\\nDeparture: June 1\\nArrival: June 2\\nReturn: June 15\", \"path\": \"travel_schedule.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "write_file",
+   "arguments": {
+    "content": "Travel Schedule:\nDeparture: June 1\nArrival: June 2\nReturn: June 15",
+    "path": "travel_schedule.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Delete the observation \"The Grapes of Wrath\" from the entity BookShelf.",
+  "tool": "delete_observations",
+  "gold_args": "{\"deletions\": [{\"entityName\": \"BookShelf\", \"observations\": [\"The Grapes of Wrath\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"delete_observations\", \"arguments\": {\"deletions\": [{\"entityName\": \"BookShelf\", \"observations\": [\"The Grapes of Wrath\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_observations",
+   "arguments": {
+    "deletions": [
+     {
+      "entityName": "BookShelf",
+      "observations": [
+       "The Grapes of Wrath"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Create two new entities for the conferences I attended: \"ACL 2025\" and \"EMNLP 2025\", both of type Conference. Add observations noting the keynote titles: \"Language Models as a Service\" for ACL and \"Unsupervised Learning in NLP\" for EMNLP.",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"Conference\", \"name\": \"ACL 2025\", \"observations\": [\"Keynote: Language Models as a Service\"]}, {\"entityType\": \"Conference\", \"name\": \"EMNLP 2025\", \"observations\": [\"Keynote: Unsupervised Learning in NLP\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"Conference\", \"name\": \"ACL 2025\", \"observations\": [\"Keynote: Language Models as a Service\"]}, {\"entityType\": \"Conference\", \"name\": \"EMNLP 2025\", \"observations\": [\"Keynote: Unsupervised Learning in NLP\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "Conference",
+      "name": "ACL 2025",
+      "observations": [
+       "Keynote: Language Models as a Service"
+      ]
+     },
+     {
+      "entityType": "Conference",
+      "name": "EMNLP 2025",
+      "observations": [
+       "Keynote: Unsupervised Learning in NLP"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please read the list of attractions and the hotel contact list for my visit to Rome. Files are Italy/Rome/attractions.txt and Italy/Rome/hotels_contacts.txt.",
+  "tool": "read_multiple_files",
+  "gold_args": "{\"paths\": [\"Italy/Rome/attractions.txt\", \"Italy/Rome/hotels_contacts.txt\"]}",
+  "output": "<tool_call>\n{\"name\": \"read_multiple_files\", \"arguments\": {\"paths\": [\"Italy/Rome/attractions.txt\", \"Italy/Rome/hotels_contacts.txt\"]}}\n</tool_call>",
+  "pred": {
+   "name": "read_multiple_files",
+   "arguments": {
+    "paths": [
+     "Italy/Rome/attractions.txt",
+     "Italy/Rome/hotels_contacts.txt"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "In grocery/inventory.csv replace \"Milk,2L\" with \"Milk,1L\" since I bought a smaller carton. Use a dry run.",
+  "tool": "edit_file",
+  "gold_args": "{\"dryRun\": true, \"edits\": [{\"newText\": \"Milk,1L\", \"oldText\": \"Milk,2L\"}], \"path\": \"grocery/inventory.csv\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"dryRun\": true, \"edits\": [{\"newText\": \"Milk,1L\", \"oldText\": \"Milk,2L\"}], \"path\": \"grocery/inventory.csv\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "dryRun": true,
+    "edits": [
+     {
+      "newText": "Milk,1L",
+      "oldText": "Milk,2L"
+     }
+    ],
+    "path": "grocery/inventory.csv"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Search the knowledge graph for the author \"Ursula K. Le Guin\" in my reading list",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"Search the knowledge graph for the author \\\"Ursula K. Le Guin\\\" in my reading list\"}",
+  "output": "<tool_call>\n{\"name\": \"search_nodes\", \"arguments\": {\"query\": \"Search the knowledge graph for the author \\\"Ursula K. Le Guin\\\" in my reading list\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_nodes",
+   "arguments": {
+    "query": "Search the knowledge graph for the author \"Ursula K. Le Guin\" in my reading list"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Find recent papers on quantum entanglement in photonic crystals",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"quantum entanglement photonic crystals\"}",
+  "output": "<tool_call>\n{\"name\": \"search_nodes\", \"arguments\": {\"query\": \"Find recent papers on quantum entanglement in photonic crystals\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_nodes",
+   "arguments": {
+    "query": "Find recent papers on quantum entanglement in photonic crystals"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "The entity PatentApplications contains duplicate files; delete patent/v1.pdf and patent/v2.pdf.",
+  "tool": "delete_observations",
+  "gold_args": "{\"deletions\": [{\"entityName\": \"PatentApplications\", \"observations\": [\"patent/v1.pdf\", \"patent/v2.pdf\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"delete_observations\", \"arguments\": {\"deletions\": [{\"entityName\": \"PatentApplications\", \"observations\": [\"patent/v1.pdf\", \"patent/v2.pdf\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_observations",
+   "arguments": {
+    "deletions": [
+     {
+      "entityName": "PatentApplications",
+      "observations": [
+       "patent/v1.pdf",
+       "patent/v2.pdf"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Where is the list of all staff files in the HR folder?",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"hr/staff\"}",
+  "output": "<tool_call>\n{\"name\": \"search_files\", \"arguments\": {\"path\": \"hr/staff\", \"pattern\": \"*.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_files",
+   "arguments": {
+    "path": "hr/staff",
+    "pattern": "*.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "I want to see everything inside my recipes folder, especially the desserts subfolder: recipes/desserts/",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"recipes/desserts/\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"recipes/desserts/\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "recipes/desserts/"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I would like to delete the note 'Check visa requirements for Brazil' from my South America travel plans entity.",
+  "tool": "delete_observations",
+  "gold_args": "{\"deletions\": [{\"entityName\": \"South America travel plans\", \"observations\": [\"Check visa requirements for Brazil\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"delete_observations\", \"arguments\": {\"deletions\": [{\"entityName\": \"South America travel plans\", \"observations\": [\"Check visa requirements for Brazil\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_observations",
+   "arguments": {
+    "deletions": [
+     {
+      "entityName": "South America travel plans",
+      "observations": [
+       "Check visa requirements for Brazil"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Could you delete the entities 'MeetingRoomA' and 'MeetingRoomB'? They have been repurposed.",
+  "tool": "delete_entities",
+  "gold_args": "{\"entityNames\": [\"MeetingRoomA\", \"MeetingRoomB\"]}",
+  "output": "<tool_call>\n{\"name\": \"delete_entities\", \"arguments\": {\"entityNames\": [\"MeetingRoomA\", \"MeetingRoomB\"]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_entities",
+   "arguments": {
+    "entityNames": [
+     "MeetingRoomA",
+     "MeetingRoomB"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Search for the file src/app/main.py in the graph",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"src/app/main.py\"}",
+  "output": "<tool_call>\n{\"name\": \"search_nodes\", \"arguments\": {\"query\": \"src/app/main.py\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_nodes",
+   "arguments": {
+    "query": "src/app/main.py"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I need a directory for debt repayment schedules: debts/repayment/schedule",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"debts/repayment/schedule\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"debts/repayment/schedule\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "debts/repayment/schedule"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Locate any entity mentioning \"birthday gift ideas\" in my personal ideas collection",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"Locate any entity mentioning \\\"birthday gift ideas\\\" in my personal ideas collection\"}",
+  "output": "<tool_call>\n{\"name\": \"search_nodes\", \"arguments\": {\"query\": \"Locate any entity mentioning \\\"birthday gift ideas\\\" in my personal ideas collection\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_nodes",
+   "arguments": {
+    "query": "Locate any entity mentioning \"birthday gift ideas\" in my personal ideas collection"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Correct the city name in the map file. In maps/city_map.txt replace \"Newyork\" with \"New York\" and preview the changes.",
+  "tool": "edit_file",
+  "gold_args": "{\"dryRun\": true, \"edits\": [{\"newText\": \"New York\", \"oldText\": \"Newyork\"}], \"path\": \"maps/city_map.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"dryRun\": true, \"edits\": [{\"newText\": \"New York\", \"oldText\": \"Newyork\"}], \"path\": \"maps/city_map.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "dryRun": true,
+    "edits": [
+     {
+      "newText": "New York",
+      "oldText": "Newyork"
+     }
+    ],
+    "path": "maps/city_map.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I need a full directory list of the conference schedule files, maybe in conf/agenda2025? There might be a typo in the folder name",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"conf/agenda2025\"}",
+  "output": "<tool_call>\n{\"name\": \"search_files\", \"arguments\": {\"path\": \"conf/agenda2025\", \"pattern\": \"*.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_files",
+   "arguments": {
+    "path": "conf/agenda2025",
+    "pattern": "*.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "Give me the recursive tree of the operations team's SOP documents, excluding any .zip archives.",
+  "tool": "directory_tree",
+  "gold_args": "{\"excludePatterns\": [\"*.zip\"], \"path\": \"operations/sop\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"excludePatterns\": [\"*.zip\"], \"path\": \"operations/sops\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "excludePatterns": [
+     "*.zip"
+    ],
+    "path": "operations/sops"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Create relation between StrengthTraining and ProteinShaker for type \"requires\"",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"StrengthTraining\", \"relationType\": \"requires\", \"to\": \"ProteinShaker\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"StrengthTraining\", \"relationType\": \"requires\", \"to\": \"ProteinShaker\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "StrengthTraining",
+      "relationType": "requires",
+      "to": "ProteinShaker"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Gather the tax documents for the current fiscal year: taxes/2023_federal.txt, taxes/2023_state.txt, and taxes/2023_local.txt.",
+  "tool": "read_multiple_files",
+  "gold_args": "{\"paths\": [\"taxes/2023_federal.txt\", \"taxes/2023_state.txt\", \"taxes/2023_local.txt\"]}",
+  "output": "<tool_call>\n{\"name\": \"read_multiple_files\", \"arguments\": {\"paths\": [\"taxes/2023_federal.txt\", \"taxes/2023_state.txt\", \"taxes/2023_local.txt\"]}}\n</tool_call>",
+  "pred": {
+   "name": "read_multiple_files",
+   "arguments": {
+    "paths": [
+     "taxes/2023_federal.txt",
+     "taxes/2023_state.txt",
+     "taxes/2023_local.txt"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "In the spreadsheet \"budget/2024/expenses.csv\" replace the line \"Rent,1000\" with \"Rent,950\" to reflect the new lease agreement.",
+  "tool": "edit_file",
+  "gold_args": "{\"edits\": [{\"newText\": \"Rent,950\", \"oldText\": \"Rent,1000\"}], \"path\": \"budget/2024/expenses.csv\"}",
+  "output": "<tool_call>\n{\"name\": \"edit_file\", \"arguments\": {\"edits\": [{\"newText\": \"Rent,950\", \"oldText\": \"Rent,1000\"}], \"path\": \"budget/2024/expenses.csv\"}}\n</tool_call>",
+  "pred": {
+   "name": "edit_file",
+   "arguments": {
+    "edits": [
+     {
+      "newText": "Rent,950",
+      "oldText": "Rent,1000"
+     }
+    ],
+    "path": "budget/2024/expenses.csv"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Produce a recursive file tree for the config folder, excluding any hidden files.",
+  "tool": "directory_tree",
+  "gold_args": "{\"excludePatterns\": [\".*\"], \"path\": \"config\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"excludePatterns\": [\".*\"], \"path\": \"config\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "excludePatterns": [
+     ".*"
+    ],
+    "path": "config"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Find tasks that include the phrase \"buy eggs\"",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"eggs\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"buy eggs\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "buy eggs"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "The airport shuttle for my London arrival is arranged, finish the task now.",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 112}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 13}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 13
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Could you produce a file called results/graph_description.txt that explains the meaning of each curve in the attached performance graph for our new algorithm?",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"The performance graph displays three curves:\\n- **Blue line**: Accuracy of the baseline algorithm across epochs.\\n- **Orange line**: Accuracy of our proposed algorithm with data augmentation.\\n- **Green line**: Validation loss for the proposed algorithm.\\nObservations: The proposed algorithm reaches 92% accuracy by epoch 15, outperforming the baseline (85%). Validation loss decreases steadily, indicating good generalization.\", \"path\": \"results/graph_description.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"Performance Graph Description:\\n\\nCurve A: Time taken for initialization.\\nCurve B: Time taken for processing.\\nCurve C: Total time taken.\\nCurve D: Memory usage during processing.\\nCurve E: Number of iterations.\\nCurve F: Error rate after convergence.\\nCurve G: CPU load during processing.\\nCurve H: Network latency during data transfer.\\nCurve I: Disk I/O during storage.\\nCurve J: User feedback rating.\\nCurve K: Algorithm version number.\\nCurve L: Hardware configuration details.\\nCurve M: Software dependencies list.\\nCurve N: Experiment parameters.\\nCurve O: Baseline comparison.\\nCurve P: Hyperparameter tuning results.\\nCurve Q: Cross-validation scores.\\nCurve R: Model accuracy.\\nCurve S: Model precision.\\nCurve T: Model recall.\\nCurve U: Model F1 score.\\nCurve V: Model ROC AUC.\\nCurve W: Model PR AUC.\\nCurve X: Model confusion matrix.\\nCurve Y: Model feature importance.\\nCurve Z: Model training history.\\n\\nNote: All curves are normalized to the range [0, 1].\\",
+  "pred": null,
+  "json_valid": 0,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "List the done tasks that were marked as medium priority for the tech conference speaker travel arrangements.",
+  "tool": "list_tasks",
+  "gold_args": "{\"priority\": \"medium\", \"status\": \"done\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"priority\": \"medium\", \"status\": \"done\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "priority": "medium",
+    "status": "done"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "open_nodes for Organic Chemistry, Inorganic Chemistry, Physical Chemistry",
+  "tool": "open_nodes",
+  "gold_args": "{\"names\": [\"Organic Chemistry\", \"Inorganic Chemistry\", \"Physical Chemistry\"]}",
+  "output": "<tool_call>\n{\"name\": \"open_nodes\", \"arguments\": {\"names\": [\"Organic Chemistry\", \"Inorganic Chemistry\", \"Physical Chemistry\"]}}\n</tool_call>",
+  "pred": {
+   "name": "open_nodes",
+   "arguments": {
+    "names": [
+     "Organic Chemistry",
+     "Inorganic Chemistry",
+     "Physical Chemistry"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I need to see the whole content of my grocery list file located at notes/grocery.txt.",
+  "tool": "read_text_file",
+  "gold_args": "{\"path\": \"notes/grocery.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"path\": \"notes/grocery.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "path": "notes/grocery.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Create an entity called Economics Research Paper with observations: research topic and the literature review file src/research/econ_lit_review.txt.",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"ResearchPaper\", \"name\": \"Economics Research Paper\", \"observations\": [\"Research topic: Income Inequality\", \"Literature review: src/research/econ_lit_review.txt\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"paper\", \"name\": \"Economics Research Paper\", \"observations\": [\"Topic: Market Dynamics\", \"Literature Review: src/research/econ_lit_review.txt\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "paper",
+      "name": "Economics Research Paper",
+      "observations": [
+       "Topic: Market Dynamics",
+       "Literature Review: src/research/econ_lit_review.txt"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "list tasks with keyword exam prep",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"exam prep\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"exam prep\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "exam prep"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Write a file named accommodation_plan.txt containing my hotel bookings: The Plaza in New York for 3 nights and The Ritz in London for 4 nights.",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"The Plaza in New York for 3 nights\\nThe Ritz in London for 4 nights\", \"path\": \"accommodation_plan.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"The Plaza in New York for 3 nights\\nThe Ritz in London for 4 nights\", \"path\": \"accommodation_plan.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "write_file",
+   "arguments": {
+    "content": "The Plaza in New York for 3 nights\nThe Ritz in London for 4 nights",
+    "path": "accommodation_plan.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show the full contents of the crew/roster directory to check recent updates.",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"crew/roster\"}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"path\": \"crew/roster\"}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "path": "crew/roster"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "Show me the recursive directory of my hotel confirmations, they're stored in hotels/confirmations",
+  "tool": "directory_tree",
+  "gold_args": "{\"excludePatterns\": [\"README.md\"], \"path\": \"hotels/confirmations\"}",
+  "output": "<tool_call>\n{\"name\": \"directory_tree\", \"arguments\": {\"path\": \"hotels/confirmations\"}}\n</tool_call>",
+  "pred": {
+   "name": "directory_tree",
+   "arguments": {
+    "path": "hotels/confirmations"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Open notes/brainstorm.txt, notes/brainstorm_ideas.txt, notes/brainstorm_final.txt",
+  "tool": "read_multiple_files",
+  "gold_args": "{\"paths\": [\"notes/brainstorm.txt\", \"notes/brainstorm_ideas.txt\", \"notes/brainstorm_final.txt\"]}",
+  "output": "<tool_call>\n{\"name\": \"read_multiple_files\", \"arguments\": {\"paths\": [\"notes/brainstorm.txt\", \"notes/brainstorm_ideas.txt\", \"notes/brainstorm_final.txt\"]}}\n</tool_call>",
+  "pred": {
+   "name": "read_multiple_files",
+   "arguments": {
+    "paths": [
+     "notes/brainstorm.txt",
+     "notes/brainstorm_ideas.txt",
+     "notes/brainstorm_final.txt"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Create a relation that marks \"1984\" as \"read\" by user \"Alice\".",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"Alice\", \"relationType\": \"hasRead\", \"to\": \"1984\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"1984\", \"relationType\": \"read\", \"to\": \"Alice\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "1984",
+      "relationType": "read",
+      "to": "Alice"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Find tasks about midterm review",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"midterm review\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"midterm\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "midterm"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Make a new directory at docs/api/reference",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"docs/api/reference\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"docs/api/reference\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "docs/api/reference"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Find any tasks that talk about \"home supplies\"",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"home supplies\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"home supplies\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "home supplies"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Give me every task regardless of status",
+  "tool": "list_tasks",
+  "gold_args": "{\"status\": \"all\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"priority\": null, \"status\": \"all\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "priority": null,
+    "status": "all"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Create a directory for my backpacking trip notes and maps",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"travel/backpacking/notes\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"travel/backpacking/notebook\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "travel/backpacking/notebook"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Find any task whose title contains 'reading'",
+  "tool": "search_tasks",
+  "gold_args": "{\"keyword\": \"reading\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"reading\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "reading"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Delete 'ProductLineA' and 'ProductLineB' as they have been discontinued.",
+  "tool": "delete_entities",
+  "gold_args": "{\"entityNames\": [\"ProductLineA\", \"ProductLineB\"]}",
+  "output": "<tool_call>\n{\"name\": \"delete_entities\", \"arguments\": {\"entityNames\": [\"ProductLineA\", \"ProductLineB\"]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_entities",
+   "arguments": {
+    "entityNames": [
+     "ProductLineA",
+     "ProductLineB"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Can you provide the permissions, size, and file type for the kettlebell workout plan at plans/kettlebell_plan.txt?",
+  "tool": "get_file_info",
+  "gold_args": "{\"path\": \"plans/kettlebell_plan.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"get_file_info\", \"arguments\": {\"path\": \"plans/kettlebell_plan.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "get_file_info",
+   "arguments": {
+    "path": "plans/kettlebell_plan.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Create the folder docs/fitness_guides for storing my workout PDFs",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"docs/fitness_guides\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"docs/fitness_guides\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "docs/fitness_guides"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "I want to get rid of the article titled \"AI in Healthcare\" from my research notes.",
+  "tool": "delete_observations",
+  "gold_args": "{\"deletions\": [{\"entityName\": \"researchNotes\", \"observations\": [\"AI in Healthcare\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"delete_task\", \"arguments\": {\"task_id\": 13}}\n</tool_call>",
+  "pred": {
+   "name": "delete_task",
+   "arguments": {
+    "task_id": 13
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "Can you set up a folder for the upcoming quarterly review meeting notes?",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"meetings/quarterly_review/notes\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"meetings/q3_review/notes\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "meetings/q3_review/notes"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Show me the first 7 lines of my language learning notes at notes/spanish_vocab.txt.",
+  "tool": "read_text_file",
+  "gold_args": "{\"head\": 7, \"path\": \"notes/spanish_vocab.txt\"}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"head\": 7, \"path\": \"notes/spanish_vocab.txt\"}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "head": 7,
+    "path": "notes/spanish_vocab.txt"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show me all tasks, regardless of status, that have high priority for the upcoming physics exam.",
+  "tool": "list_tasks",
+  "gold_args": "{\"priority\": \"high\", \"status\": \"all\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"priority\": \"high\", \"status\": \"all\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "priority": "high",
+    "status": "all"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show me done tasks with medium priority",
+  "tool": "list_tasks",
+  "gold_args": "{\"priority\": \"medium\", \"status\": \"done\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"priority\": \"medium\", \"status\": \"done\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "priority": "medium",
+    "status": "done"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Open nodes named CapitalBudget, RiskAssessment, and FundingSources",
+  "tool": "open_nodes",
+  "gold_args": "{\"names\": [\"CapitalBudget\", \"RiskAssessment\", \"FundingSources\"]}",
+  "output": "<tool_call>\n{\"name\": \"open_nodes\", \"arguments\": {\"names\": [\"CapitalBudget\", \"RiskAssessment\", \"FundingSources\"]}}\n</tool_call>",
+  "pred": {
+   "name": "open_nodes",
+   "arguments": {
+    "names": [
+     "CapitalBudget",
+     "RiskAssessment",
+     "FundingSources"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Plase link Paris to Eiffel Tower as a must-see and link Rome to Colosseum as a historic spot",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"Paris\", \"relationType\": \"must-see\", \"to\": \"Eiffel Tower\"}, {\"from\": \"Rome\", \"relationType\": \"historic spot\", \"to\": \"Colosseum\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"Paris\", \"relationType\": \"must-see\", \"to\": \"Eiffel Tower\"}, {\"from\": \"Rome\", \"relationType\": \"historic spot\", \"to\": \"Colosseum\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "Paris",
+      "relationType": "must-see",
+      "to": "Eiffel Tower"
+     },
+     {
+      "from": "Rome",
+      "relationType": "historic spot",
+      "to": "Colosseum"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Read the documentation files docs/README.md and docs/CONTRIBUTING.md to extract the project overview.",
+  "tool": "read_multiple_files",
+  "gold_args": "{\"paths\": [\"docs/README.md\", \"docs/CONTRIBUTING.md\"]}",
+  "output": "<tool_call>\n{\"name\": \"read_multiple_files\", \"arguments\": {\"paths\": [\"docs/README.md\", \"docs/CONTRIBUTING.md\"]}}\n</tool_call>",
+  "pred": {
+   "name": "read_multiple_files",
+   "arguments": {
+    "paths": [
+     "docs/README.md",
+     "docs/CONTRIBUTING.md"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Add a new microservice called AuthService of type service with some initial notes.",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"service\", \"name\": \"AuthService\", \"observations\": [\"Handles user authentication and token issuance.\", \"Located in src/auth/main.py\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"service\", \"name\": \"AuthService\", \"observations\": [\"Initial setup\", \"Handles user authentication\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "service",
+      "name": "AuthService",
+      "observations": [
+       "Initial setup",
+       "Handles user authentication"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Mark that \"To Kill a Mockingbird\" was \"borrowed\" by \"Bob\" on the reading list.",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"Bob\", \"relationType\": \"borrowed\", \"to\": \"To Kill a Mockingbird\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"To Kill a Mockingbird\", \"relationType\": \"borrowed\", \"to\": \"Bob\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "To Kill a Mockingbird",
+      "relationType": "borrowed",
+      "to": "Bob"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Complete task 1001 now that the issue in src/app/main.py is resolved.",
+  "tool": "complete_task",
+  "gold_args": "{\"task_id\": 1001}",
+  "output": "<tool_call>\n{\"name\": \"complete_task\", \"arguments\": {\"task_id\": 1001}}\n</tool_call>",
+  "pred": {
+   "name": "complete_task",
+   "arguments": {
+    "task_id": 1001
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please fetch the log files logs/error.log and logs/access.log for analysis.",
+  "tool": "read_multiple_files",
+  "gold_args": "{\"paths\": [\"logs/error.log\", \"logs/access.log\"]}",
+  "output": "<tool_call>\n{\"name\": \"read_multiple_files\", \"arguments\": {\"paths\": [\"logs/error.log\", \"logs/access.log\"]}}\n</tool_call>",
+  "pred": {
+   "name": "read_multiple_files",
+   "arguments": {
+    "paths": [
+     "logs/error.log",
+     "logs/access.log"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Pull the list of done items related to tax preparation with medium priority.",
+  "tool": "list_tasks",
+  "gold_args": "{\"priority\": \"medium\", \"status\": \"done\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"priority\": \"medium\", \"status\": \"done\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "priority": "medium",
+    "status": "done"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Create a new file named logs/empty.log and leave it completely empty for now.",
+  "tool": "write_file",
+  "gold_args": "{\"content\": \"\", \"path\": \"logs/empty.log\"}",
+  "output": "<tool_call>\n{\"name\": \"write_file\", \"arguments\": {\"content\": \"\", \"path\": \"logs/empty.log\"}}\n</tool_call>",
+  "pred": {
+   "name": "write_file",
+   "arguments": {
+    "content": "",
+    "path": "logs/empty.log"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Please erase the following destinations: Cairo, Kyoto, and Montreal.",
+  "tool": "delete_entities",
+  "gold_args": "{\"entityNames\": [\"Cairo\", \"Kyoto\", \"Montreal\"]}",
+  "output": "<tool_call>\n{\"name\": \"delete_entities\", \"arguments\": {\"entityNames\": [\"Cairo\", \"Kyoto\", \"Montreal\"]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_entities",
+   "arguments": {
+    "entityNames": [
+     "Cairo",
+     "Kyoto",
+     "Montreal"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Can you link the paper titled \"Deep Learning Advances\" to the conference \"NeurIPS 2023\" as its presentation venue?",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"Deep Learning Advances\", \"relationType\": \"presentedAt\", \"to\": \"NeurIPS 2023\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"Deep Learning Advances\", \"relationType\": \"presentedAt\", \"to\": \"NeurIPS 2023\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "Deep Learning Advances",
+      "relationType": "presentedAt",
+      "to": "NeurIPS 2023"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Identify all notes that contain the word \"budget\" in the folder notes/finance",
+  "tool": "search_nodes",
+  "gold_args": "{\"query\": \"Identify all notes that contain the word \\\"budget\\\" in the folder notes/finance\"}",
+  "output": "<tool_call>\n{\"name\": \"search_tasks\", \"arguments\": {\"keyword\": \"budget\"}}\n</tool_call>",
+  "pred": {
+   "name": "search_tasks",
+   "arguments": {
+    "keyword": "budget"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "Eliminate entity LabNotebookEntry42 after digitization",
+  "tool": "delete_entities",
+  "gold_args": "{\"entityNames\": [\"LabNotebookEntry42\"]}",
+  "output": "<tool_call>\n{\"name\": \"delete_entities\", \"arguments\": {\"entityNames\": [\"LabNotebookEntry42\"]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_entities",
+   "arguments": {
+    "entityNames": [
+     "LabNotebookEntry42"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Create a folder for supplement inventory at supplements/inventory",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"supplements/inventory\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"supplements/inventory\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "supplements/inventory"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Create entity \"SafetyProtocol\" with type \"Guideline\" and observations: \"Drafted emergency evacuation plan\", \"Reviewed with venue security\", \"Document stored at safety/evacuation_plan.docx\".",
+  "tool": "create_entities",
+  "gold_args": "{\"entities\": [{\"entityType\": \"Guideline\", \"name\": \"SafetyProtocol\", \"observations\": [\"Drafted emergency evacuation plan\", \"Reviewed with venue security\", \"Document stored at safety/evacuation_plan.docx\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"create_entities\", \"arguments\": {\"entities\": [{\"entityType\": \"Guideline\", \"name\": \"SafetyProtocol\", \"observations\": [\"Drafted emergency evacuation plan\", \"Reviewed with venue security\", \"Document stored at safety/evacuation_plan.docx\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_entities",
+   "arguments": {
+    "entities": [
+     {
+      "entityType": "Guideline",
+      "name": "SafetyProtocol",
+      "observations": [
+       "Drafted emergency evacuation plan",
+       "Reviewed with venue security",
+       "Document stored at safety/evacuation_plan.docx"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Prepare a directory for my Paris itinerary and hotel reservations",
+  "tool": "create_directory",
+  "gold_args": "{\"path\": \"travel/paris/itinerary\"}",
+  "output": "<tool_call>\n{\"name\": \"create_directory\", \"arguments\": {\"path\": \"travel/paris\"}}\n</tool_call>",
+  "pred": {
+   "name": "create_directory",
+   "arguments": {
+    "path": "travel/paris"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "I need the entity RetirementPlan2024 removed; could you do that?",
+  "tool": "delete_entities",
+  "gold_args": "{\"entityNames\": [\"RetirementPlan2024\"]}",
+  "output": "<tool_call>\n{\"name\": \"delete_entities\", \"arguments\": {\"entityNames\": [\"RetirementPlan2024\"]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_entities",
+   "arguments": {
+    "entityNames": [
+     "RetirementPlan2024"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Give me the first 7 rows of the spreadsheet saved as text in data/books.csv.",
+  "tool": "read_text_file",
+  "gold_args": "{\"head\": 7, \"path\": \"data/books.csv\"}",
+  "output": "<tool_call>\n{\"name\": \"read_text_file\", \"arguments\": {\"head\": 7, \"path\": \"data/books.csv\"}}\n</tool_call>",
+  "pred": {
+   "name": "read_text_file",
+   "arguments": {
+    "head": 7,
+    "path": "data/books.csv"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Erase the observation on the topic of quantum mechanics from physics_notes",
+  "tool": "delete_observations",
+  "gold_args": "{\"deletions\": [{\"entityName\": \"physics_notes\", \"observations\": [\"topic of quantum mechanics\"]}]}",
+  "output": "<tool_call>\n{\"name\": \"delete_observations\", \"arguments\": {\"deletions\": [{\"entityName\": \"physics_notes\", \"observations\": [\"topic: quantum mechanics\"]}]}}\n</tool_call>",
+  "pred": {
+   "name": "delete_observations",
+   "arguments": {
+    "deletions": [
+     {
+      "entityName": "physics_notes",
+      "observations": [
+       "topic: quantum mechanics"
+      ]
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Display all tasks",
+  "tool": "list_tasks",
+  "gold_args": "{\"status\": \"all\"}",
+  "output": "<tool_call>\n{\"name\": \"list_tasks\", \"arguments\": {\"status\": \"all\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_tasks",
+   "arguments": {
+    "status": "all"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Plan a wedding rehearsal dinner with a venue, a photographer, and a caterer",
+  "tool": "create_relations",
+  "gold_args": "{\"relations\": [{\"from\": \"RehearsalDinner\", \"relationType\": \"hasVenue\", \"to\": \"Venue\"}, {\"from\": \"RehearsalDinner\", \"relationType\": \"hasPhotographer\", \"to\": \"Photographer\"}, {\"from\": \"RehearsalDinner\", \"relationType\": \"hasCaterer\", \"to\": \"Caterer\"}]}",
+  "output": "<tool_call>\n{\"name\": \"create_relations\", \"arguments\": {\"relations\": [{\"from\": \"Wedding Rehearsal Dinner\", \"relationType\": \"hasVenue\", \"to\": \"The Venue\"}, {\"from\": \"Wedding Rehearsal Dinner\", \"relationType\": \"hasPhotographer\", \"to\": \"Photographer\"}, {\"from\": \"Wedding Rehearsal Dinner\", \"relationType\": \"hasCaterer\", \"to\": \"Caterer\"}]}}\n</tool_call>",
+  "pred": {
+   "name": "create_relations",
+   "arguments": {
+    "relations": [
+     {
+      "from": "Wedding Rehearsal Dinner",
+      "relationType": "hasVenue",
+      "to": "The Venue"
+     },
+     {
+      "from": "Wedding Rehearsal Dinner",
+      "relationType": "hasPhotographer",
+      "to": "Photographer"
+     },
+     {
+      "from": "Wedding Rehearsal Dinner",
+      "relationType": "hasCaterer",
+      "to": "Caterer"
+     }
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Can you show me the contents of the project directory for the new marketing campaign?",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"marketing/campaign\"}",
+  "output": "<tool_call>\n{\"name\": \"read_directory\", \"arguments\": {\"path\": \"marketing/campaign\"}}\n</tool_call>",
+  "pred": {
+   "name": "read_directory",
+   "arguments": {
+    "path": "marketing/campaign"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 0,
+  "schema_valid": 0,
+  "args_exact": 0
+ },
+ {
+  "query": "Open nodes for TaxLiability, AuditTrail, and ComplianceStatus",
+  "tool": "open_nodes",
+  "gold_args": "{\"names\": [\"TaxLiability\", \"AuditTrail\", \"ComplianceStatus\"]}",
+  "output": "<tool_call>\n{\"name\": \"open_nodes\", \"arguments\": {\"names\": [\"TaxLiability\", \"AuditTrail\", \"ComplianceStatus\"]}}\n</tool_call>",
+  "pred": {
+   "name": "open_nodes",
+   "arguments": {
+    "names": [
+     "TaxLiability",
+     "AuditTrail",
+     "ComplianceStatus"
+    ]
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Show me a detailed directory listing of my trip photos",
+  "tool": "list_directory",
+  "gold_args": "{\"path\": \"trip/photos\"}",
+  "output": "<tool_call>\n{\"name\": \"list_directory\", \"arguments\": {\"path\": \"travel/photos\"}}\n</tool_call>",
+  "pred": {
+   "name": "list_directory",
+   "arguments": {
+    "path": "travel/photos"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 0
+ },
+ {
+  "query": "Provide the file attributes for the exam review deck decks/review_final_exam.key to see its permissions and type.",
+  "tool": "get_file_info",
+  "gold_args": "{\"path\": \"decks/review_final_exam.key\"}",
+  "output": "<tool_call>\n{\"name\": \"get_file_info\", \"arguments\": {\"path\": \"decks/review_final_exam.key\"}}\n</tool_call>",
+  "pred": {
+   "name": "get_file_info",
+   "arguments": {
+    "path": "decks/review_final_exam.key"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ },
+ {
+  "query": "Check the metadata of the venue layout file event/venue_layout.pdf for size and modification date.",
+  "tool": "get_file_info",
+  "gold_args": "{\"path\": \"event/venue_layout.pdf\"}",
+  "output": "<tool_call>\n{\"name\": \"get_file_info\", \"arguments\": {\"path\": \"event/venue_layout.pdf\"}}\n</tool_call>",
+  "pred": {
+   "name": "get_file_info",
+   "arguments": {
+    "path": "event/venue_layout.pdf"
+   }
+  },
+  "json_valid": 1,
+  "tool_correct": 1,
+  "schema_valid": 1,
+  "args_exact": 1
+ }
+]
