@@ -11,11 +11,16 @@ SANDBOX = ROOT / "sandbox"
 WORK = SANDBOX / "work"          # filesystem examples run in here, wiped each time
 ap = argparse.ArgumentParser()
 ap.add_argument("--limit", type=int, default=0)
+ap.add_argument("--raw", default="data/raw.jsonl")
+ap.add_argument("--out", default="data/clean.json")
 ap.add_argument("--dry", action="store_true")
 args = ap.parse_args()
+_g = {"__file__": str(ROOT / "analysis" / "rescore.py")}
+exec((ROOT / "analysis" / "rescore.py").read_text().split('for split in ["test_seen"')[0], _g)
+answerable = _g["answerable"]
 
 tools = {t["name"]: t for t in json.load(open(ROOT / "data/tools_kept.json"))}
-rows = [json.loads(l) for l in open(ROOT / "data/raw.jsonl")]
+rows = [json.loads(l) for l in open(ROOT / args.raw)]
 if args.limit:
     rows = random.Random(0).sample(rows, min(args.limit, len(rows)))
 
@@ -165,6 +170,8 @@ for r in rows:
     bad = ungrounded(a, q)
     if bad:
         stats["not_grounded"] += 1; gkeys[(r["tool"], bad[0])] += 1; continue
+    if not answerable(a, r["query"], r["tool"]):
+        stats["not_answerable"] += 1; continue
     kq, ka = (r["tool"], q), (r["tool"], json.dumps(a, sort_keys=True))
     if kq in seen_q or arg_count[ka] >= 5:
         stats["duplicate"] += 1; continue
@@ -230,7 +237,7 @@ async def main():
                     errs[tool].append(msg)
             if i % 200 == 0:
                 print(f"  executed {i}/{len(stage)}")
-    json.dump(clean, open(ROOT / "data/clean.json", "w"), indent=1)
+    json.dump(clean, open(ROOT / args.out, "w"), indent=1)
     print(f"\nexecuted OK: {len(clean)}/{len(stage)}")
     for t in sorted(tools):
         if passed[t] or failed[t]:

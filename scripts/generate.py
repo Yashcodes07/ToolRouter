@@ -13,9 +13,9 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--model", default="openai/gpt-oss-120b")
 ap.add_argument("--per-tool", type=int, default=250)   # raw examples per tool
 ap.add_argument("--batch", type=int, default=12)       # examples per API call
-ap.add_argument("--sleep", type=float, default=10)   
-ap.add_argument("--only", default="")
-ap.add_argument("--out", default="data/raw.jsonl")  # stays under the per-minute token limit
+ap.add_argument("--sleep", type=float, default=10)     # stays under the per-minute token limit
+ap.add_argument("--only", default="")                  # comma-separated tool names
+ap.add_argument("--out", default="data/raw.jsonl")
 args = ap.parse_args()
 
 TOOLS_FILE, OUT = ROOT / "data/tools_kept.json", ROOT / args.out
@@ -23,7 +23,7 @@ if not TOOLS_FILE.exists():
     raise SystemExit("data/tools_kept.json missing: run the keep/holdout step first")
 tools = json.load(open(TOOLS_FILE))
 if args.only:
-      tools = [t for t in tools if t["name"] in set(args.only.split(","))]
+    tools = [t for t in tools if t["name"] in set(args.only.split(","))]
 client = Groq()
 
 STYLES = ["terse", "polite", "casual", "detailed", "vague but sufficient",
@@ -47,6 +47,16 @@ HINTS = {
     "create_relations": ENT, "delete_relations": ENT,
     "delete_entities": ENT, "open_nodes": ENT, "search_nodes": ENT,
 }
+# v2 hints: values must be readable from the request
+PATH_HINT = "Every request must contain the complete path exactly as written in arguments, with slashes, e.g. Create the folder travel/berlin/schedule."
+HINTS["create_directory"] = PATH_HINT
+HINTS["directory_tree"] = PATH_HINT
+HINTS["list_directory"] = PATH_HINT
+HINTS["write_file"] = "Every request must contain the full file path exactly as in arguments and say what the file should contain; keep the content short."
+HINTS["complete_task"] = "Every request must contain the numeric task id, e.g. Mark task 14 as done."
+HINTS["delete_task"] = "Every request must contain the numeric task id, e.g. Remove task 14."
+HINTS["create_relations"] = "Every request must name both entities and quote the relation type exactly as in arguments, e.g. link 'Alice' to 'Bob' with relation type 'mentors'."
+HINTS["search_nodes"] = "The search text in arguments must appear verbatim in the request, e.g. Search the graph for 'authentication flow'."
 
 
 def spec(t):
@@ -65,7 +75,7 @@ Write {args.batch} different realistic user requests that require exactly this t
 Theme: {random.choice(THEMES)}. Style: {random.choice(STYLES)}.
 Rules:
 - "arguments" must follow input_schema exactly: correct names and types, every required field present, no invented fields.
-- Include optional arguments in about half of the examples.
+- Include an optional argument only when the request explicitly asks for it (for example "first 10 lines", "high priority", "preview only"); otherwise leave it out.
 - File paths must be relative with no leading slash (for example notes/todo.txt, src/app/main.py).
 - The request text must contain every string value that appears in arguments (paths, names, titles, patterns). Never rely on the reader guessing a value.
 {hint_line}- Vary wording, length and detail. Never repeat a request.
