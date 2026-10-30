@@ -17,6 +17,7 @@ ap.add_argument("--src", default="Yashcodes07/toolrouter-mcp-calls")   # v1: tes
 ap.add_argument("--repo", required=True)                                # new v2 dataset repo
 ap.add_argument("--extra", default="data/clean_v2_new.json")            # newly generated + filtered rows
 ap.add_argument("--push", action="store_true")
+ap.add_argument("--cap", type=int, default=200)
 ap.add_argument("--public", action="store_true")
 args = ap.parse_args()
 
@@ -61,6 +62,16 @@ for r in pool:
     seen_q.add(key)
     train.append({"tool": t, "server": tools[t]["server"], "query": r["query"],
                   "arguments": json.dumps(r["arguments"], sort_keys=True)})
+import random
+rng = random.Random(42)
+by_tool = {}
+for r in train:
+    by_tool.setdefault(r["tool"], []).append(r)
+train = []
+for rows_t in by_tool.values():
+       rng.shuffle(rows_t)
+       train += rows_t[:args.cap]
+rng.shuffle(train)
 
 val = [r for r in v1["val"] if answerable(json.loads(r["arguments"]), r["query"], r["tool"])]
 print("dropped from pool:", dict(stats))
